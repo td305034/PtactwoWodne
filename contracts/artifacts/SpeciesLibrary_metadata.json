@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/SpeciesLibrary.sol": "SpeciesLibrary"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/SpeciesLibrary.sol": {
+			"keccak256": "0x3ce3984897877990a314be62d7704642fc8d4e4940889fa9f80953d244e0c4e2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e2664a396cdaf155f01b5e4e9a74fcd8fb5d224b168956cefe4d5fd772e8b798",
+				"dweb:/ipfs/QmeGyj9sSnMECxxsvNQ3BN7se3oKRxARJVUxYrkKXL866h"
+			]
+		}
+	},
+	"version": 1
+}

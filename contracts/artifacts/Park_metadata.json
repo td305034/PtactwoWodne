@@ -1,0 +1,174 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_ptakAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "ageBird",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "buyInsurance",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "healBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "insured",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "imageUrl",
+						"type": "string"
+					}
+				],
+				"name": "mintLegendaryBird",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ptakContract",
+				"outputs": [
+					{
+						"internalType": "contract Ptak",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "randomPoisoning",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Park.sol": "Park"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Park.sol": {
+			"keccak256": "0x538beb44987dbd5ecee9e8c9618bb40a8cd942ec3ef07c688661213e2864eb10",
+			"urls": [
+				"bzz-raw://2039b256d3f4dedb87986aa61654e044c5269ca9416b9d0ecf7224a68615664a",
+				"dweb:/ipfs/QmeGdCkTzAZLGcxmYRysmXZHKuyoBov47KR8i4sKedx88W"
+			]
+		},
+		"contracts/Ptak.sol": {
+			"keccak256": "0xebc26ed7f4c3f41beacd641e86bb993a17cb5de59d5841df302cefe07480852a",
+			"urls": [
+				"bzz-raw://a126e1859dac6ac5c339efc5fc41293e29af4841cc22d82e43bf525d79fa3088",
+				"dweb:/ipfs/QmRRfCJbefpm4ujKHoFiMm3ECfEM43VFbi5qZqzaVaB48F"
+			]
+		},
+		"contracts/SpeciesLibrary.sol": {
+			"keccak256": "0x11d25478c3836a3fb614967c0fbe4b9dc51d9ed8cde672934363bfe06e103d58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://78ae91461bb8964344a21e7d1d5e53fb6eae279cbb3732897fbc98e8d7ccb71f",
+				"dweb:/ipfs/QmR2LqbNhYRNaW8LCGymhDg4zz2KtKUB33AYyxnDK82W4A"
+			]
+		}
+	},
+	"version": 1
+}

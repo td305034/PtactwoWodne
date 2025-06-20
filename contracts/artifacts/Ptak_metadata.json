@@ -1,0 +1,212 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_parkContract",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "birds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hunger",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "health",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum SpeciesLibrary.Species",
+						"name": "species",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "imageUrl",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getBird",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "age",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "hunger",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "health",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum SpeciesLibrary.Species",
+								"name": "species",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "imageUrl",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Ptak.BirdData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum SpeciesLibrary.Species",
+						"name": "species",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "imageUrl",
+						"type": "string"
+					}
+				],
+				"name": "mintBird",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "parkContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_park",
+						"type": "address"
+					}
+				],
+				"name": "setParkContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Ptak.sol": "Ptak"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Ptak.sol": {
+			"keccak256": "0xebc26ed7f4c3f41beacd641e86bb993a17cb5de59d5841df302cefe07480852a",
+			"urls": [
+				"bzz-raw://a126e1859dac6ac5c339efc5fc41293e29af4841cc22d82e43bf525d79fa3088",
+				"dweb:/ipfs/QmRRfCJbefpm4ujKHoFiMm3ECfEM43VFbi5qZqzaVaB48F"
+			]
+		},
+		"contracts/SpeciesLibrary.sol": {
+			"keccak256": "0x11d25478c3836a3fb614967c0fbe4b9dc51d9ed8cde672934363bfe06e103d58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://78ae91461bb8964344a21e7d1d5e53fb6eae279cbb3732897fbc98e8d7ccb71f",
+				"dweb:/ipfs/QmR2LqbNhYRNaW8LCGymhDg4zz2KtKUB33AYyxnDK82W4A"
+			]
+		}
+	},
+	"version": 1
+}
