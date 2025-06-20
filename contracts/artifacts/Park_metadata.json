@@ -131,19 +131,19 @@
 			]
 		},
 		"contracts/Ptak.sol": {
-			"keccak256": "0x922e1988172031d76421892c153cbea62ddd3f3351d1e4136b6dff6605c9f84f",
+			"keccak256": "0x8e95e6e08abc284ff3aaf5d29bf4f34ba8e8835661e0a03c71a4c031282a7f9a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://33ddeb563448949130fd0e6e4e40625353e23dd70445dc01c3bcb01bc3c7caec",
-				"dweb:/ipfs/QmfQgkZzh3XGvXzVDmy38SFNxzLKiLy9Wi9SBYsgMkKj63"
+				"bzz-raw://0c3ba48959ab5769ae87dfd73f920bbde8f5fae2baa8b9ee1c1d33cbb942d5e0",
+				"dweb:/ipfs/QmaWCSKdFhKuRrLczTG21wUsDe6Q6cnLc8mv6af6Rs4n2i"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {
-			"keccak256": "0x3ce3984897877990a314be62d7704642fc8d4e4940889fa9f80953d244e0c4e2",
+			"keccak256": "0xad204a25d132c6145d22f061e8f50fe9797de3bbf2f4bf4006c663836e085f97",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e2664a396cdaf155f01b5e4e9a74fcd8fb5d224b168956cefe4d5fd772e8b798",
-				"dweb:/ipfs/QmeGyj9sSnMECxxsvNQ3BN7se3oKRxARJVUxYrkKXL866h"
+				"bzz-raw://fb29e4917d95ef2cd54941135d937ba38ba9337a724da625bd22416fdf6b020d",
+				"dweb:/ipfs/QmUnyHRgai2XWcfeotDkFVpe3L6s9vKSQNAE3e1y4SWfa6"
 			]
 		}
 	},

@@ -199,6 +199,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_parkContract",
+						"type": "address"
+					}
+				],
+				"name": "setParkContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
@@ -238,19 +251,19 @@
 	},
 	"sources": {
 		"contracts/Ptak.sol": {
-			"keccak256": "0x922e1988172031d76421892c153cbea62ddd3f3351d1e4136b6dff6605c9f84f",
+			"keccak256": "0x03261fcc4b4d692d17f21e50650d9b0f1b1a6c5ad1e60f79c44e51c92e34f36f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://33ddeb563448949130fd0e6e4e40625353e23dd70445dc01c3bcb01bc3c7caec",
-				"dweb:/ipfs/QmfQgkZzh3XGvXzVDmy38SFNxzLKiLy9Wi9SBYsgMkKj63"
+				"bzz-raw://71a3a4ff00457ff245bbfc8c45829bae0a544b3cb766ccfd568ddf86fc9b7fe2",
+				"dweb:/ipfs/QmNvS7XyPy26DtSgKAd49vUAmrebTvTB5MSD45v3B16JiG"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {
-			"keccak256": "0x3ce3984897877990a314be62d7704642fc8d4e4940889fa9f80953d244e0c4e2",
+			"keccak256": "0xad204a25d132c6145d22f061e8f50fe9797de3bbf2f4bf4006c663836e085f97",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e2664a396cdaf155f01b5e4e9a74fcd8fb5d224b168956cefe4d5fd772e8b798",
-				"dweb:/ipfs/QmeGyj9sSnMECxxsvNQ3BN7se3oKRxARJVUxYrkKXL866h"
+				"bzz-raw://fb29e4917d95ef2cd54941135d937ba38ba9337a724da625bd22416fdf6b020d",
+				"dweb:/ipfs/QmUnyHRgai2XWcfeotDkFVpe3L6s9vKSQNAE3e1y4SWfa6"
 			]
 		}
 	},

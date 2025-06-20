@@ -32,14 +32,13 @@ contract Ptak {
         SpeciesLibrary.SpeciesInfo memory info = SpeciesLibrary.getSpeciesInfo(species);
         birds[nextId] = BirdData(0, 0, info.maxHealth, species, block.timestamp);
         nextId++;
-        return 0; // success
+        return 0;
     }
 
     function updateHungerAndAge(uint256 id) public {
         BirdData storage bird = birds[id];
-        uint256 timeElapsed = block.timestamp - bird.lastUpdateTime; // w sekundach
+        uint256 timeElapsed = block.timestamp - bird.lastUpdateTime; // in seconds
         if(timeElapsed > 0) {
-            // hunger rośnie proporcjonalnie do czasu (nie tylko pełne godziny)
             uint256 hungerIncrease = (timeElapsed * SpeciesLibrary.getSpeciesInfo(bird.species).hungerDecayRate) / 3600;
             bird.hunger += hungerIncrease;
 
@@ -48,7 +47,7 @@ contract Ptak {
                 bird.hunger = maxHunger;
             }
 
-            // starzenie: np. 1 dzień = 86400 sekund
+            // starzenie
             uint256 daysPassed = timeElapsed / 86400;
             if(daysPassed > 0) {
                 bird.age += daysPassed;
@@ -80,7 +79,7 @@ contract Ptak {
         if(bird.hunger >= foodAmount){
             bird.hunger -= foodAmount;
         } else {
-            bird.hunger = 0; // minimalny głód to zero
+            bird.hunger = 0;
         }
     }
 
@@ -92,6 +91,11 @@ contract Ptak {
     function getBird(uint256 id) external returns (BirdData memory) {
         updateHungerAndAge(id);
         return birds[id];
+    }
+
+    function setParkContract(address _parkContract) external {
+        require(parkContract == address(0), "Park already set");
+        parkContract = _parkContract;
     }
 
 }

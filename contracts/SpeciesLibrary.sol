@@ -6,14 +6,14 @@ library SpeciesLibrary {
         MuteSwan, 
         WhiteStork, 
         MallardDuck, 
-        Mythical, 
         GreyHeron, 
         RedNeckedGrebe, 
         WaterRail, 
         CommonTern, 
         Goosander, 
         GreylagGoose, 
-        Moorhen 
+        Moorhen,
+        Mythical
     }
 
 

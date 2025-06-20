@@ -1,5 +1,5 @@
 {
-	"id": "2d7760bad562acf86bd46145af206a38",
+	"id": "d37e48a0acdcfe8b8059853d424fa80d",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.30",
 	"solcLongVersion": "0.8.30+commit.73712a01",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"contracts/SpeciesLibrary.sol": {
-				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\nlibrary SpeciesLibrary {\r\n    enum Species { \r\n        MuteSwan, \r\n        WhiteStork, \r\n        MallardDuck, \r\n        Mythical, \r\n        GreyHeron, \r\n        RedNeckedGrebe, \r\n        WaterRail, \r\n        CommonTern, \r\n        Goosander, \r\n        GreylagGoose, \r\n        Moorhen \r\n    }\r\n\r\n\r\n    struct SpeciesInfo {\r\n        uint256 maxHealth;       // the longer the ptak actually lives, the more health it gets here\r\n        uint256 maxHunger;       // when hunger reaches maxHunger, the Ptak dies. When it gets below 0, it gets poisoned.\r\n        uint256 hungerDecayRate; // this value is added to hunger every hour\r\n        uint256 poisoningChance; // percentage (0-100)\r\n        string imageUrl;\r\n    }\r\n\r\n    function getSpeciesInfo(Species species) internal pure returns (SpeciesInfo memory) {\r\n        if (species == Species.MuteSwan) {\r\n            return SpeciesInfo(200, 150, 3, 1, \"https://gateway.pinata.cloud/ipfs/bafybeia3le4astknh2p4mbkd5w42j522tnse4wxk7w5m7wimoqdp6ouzpy\");\r\n        } else if (species == Species.WhiteStork) {\r\n            return SpeciesInfo(220, 200, 2, 5, \"https://gateway.pinata.cloud/ipfs/bafybeigohotok6k3onvtjyypfnbnzbcso2qcixbwz4wh64vp2n3lq7nksa\");\r\n        } else if (species == Species.MallardDuck) {\r\n            return SpeciesInfo(80, 80, 3, 6, \"https://gateway.pinata.cloud/ipfs/bafybeiev7pucz7yh7x6haidmphp5ieobvcfdclnlwjqa2ivs4y357pvwma\");\r\n        } else if (species == Species.Mythical) {\r\n            return SpeciesInfo(300, 300, 1, 0, \"\");\r\n        } else if (species == Species.GreyHeron) {\r\n            return SpeciesInfo(180, 90, 2, 4, \"\");\r\n        } else if (species == Species.RedNeckedGrebe) {\r\n            return SpeciesInfo(80, 70, 2, 8, \"\");\r\n        } else if (species == Species.WaterRail) {\r\n            return SpeciesInfo(50, 60, 4, 5, \"\");\r\n        } else if (species == Species.CommonTern) {\r\n            return SpeciesInfo(55, 40, 3, 4, \"\");\r\n        } else if (species == Species.Goosander) {\r\n            return SpeciesInfo(78, 65, 2, 4, \"\");\r\n        } else if (species == Species.GreylagGoose) {\r\n            return SpeciesInfo(150, 100, 4, 3, \"\");\r\n        } else if (species == Species.Moorhen) {\r\n            return SpeciesInfo(35, 66, 4, 5, \"\");\r\n        }\r\n        revert(\"Unknown species\");\r\n    }\r\n\r\n}"
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\nlibrary SpeciesLibrary {\r\n    enum Species { \r\n        MuteSwan, \r\n        WhiteStork, \r\n        MallardDuck, \r\n        GreyHeron, \r\n        RedNeckedGrebe, \r\n        WaterRail, \r\n        CommonTern, \r\n        Goosander, \r\n        GreylagGoose, \r\n        Moorhen,\r\n        Mythical\r\n    }\r\n\r\n\r\n    struct SpeciesInfo {\r\n        uint256 maxHealth;       // the longer the ptak actually lives, the more health it gets here\r\n        uint256 maxHunger;       // when hunger reaches maxHunger, the Ptak dies. When it gets below 0, it gets poisoned.\r\n        uint256 hungerDecayRate; // this value is added to hunger every hour\r\n        uint256 poisoningChance; // percentage (0-100)\r\n        string imageUrl;\r\n    }\r\n\r\n    function getSpeciesInfo(Species species) internal pure returns (SpeciesInfo memory) {\r\n        if (species == Species.MuteSwan) {\r\n            return SpeciesInfo(200, 150, 3, 1, \"https://gateway.pinata.cloud/ipfs/bafybeia3le4astknh2p4mbkd5w42j522tnse4wxk7w5m7wimoqdp6ouzpy\");\r\n        } else if (species == Species.WhiteStork) {\r\n            return SpeciesInfo(220, 200, 2, 5, \"https://gateway.pinata.cloud/ipfs/bafybeigohotok6k3onvtjyypfnbnzbcso2qcixbwz4wh64vp2n3lq7nksa\");\r\n        } else if (species == Species.MallardDuck) {\r\n            return SpeciesInfo(80, 80, 3, 6, \"https://gateway.pinata.cloud/ipfs/bafybeiev7pucz7yh7x6haidmphp5ieobvcfdclnlwjqa2ivs4y357pvwma\");\r\n        } else if (species == Species.Mythical) {\r\n            return SpeciesInfo(300, 300, 1, 0, \"\");\r\n        } else if (species == Species.GreyHeron) {\r\n            return SpeciesInfo(180, 90, 2, 4, \"\");\r\n        } else if (species == Species.RedNeckedGrebe) {\r\n            return SpeciesInfo(80, 70, 2, 8, \"\");\r\n        } else if (species == Species.WaterRail) {\r\n            return SpeciesInfo(50, 60, 4, 5, \"\");\r\n        } else if (species == Species.CommonTern) {\r\n            return SpeciesInfo(55, 40, 3, 4, \"\");\r\n        } else if (species == Species.Goosander) {\r\n            return SpeciesInfo(78, 65, 2, 4, \"\");\r\n        } else if (species == Species.GreylagGoose) {\r\n            return SpeciesInfo(150, 100, 4, 3, \"\");\r\n        } else if (species == Species.Moorhen) {\r\n            return SpeciesInfo(35, 66, 4, 5, \"\");\r\n        }\r\n        revert(\"Unknown species\");\r\n    }\r\n\r\n}"
 			}
 		},
 		"settings": {
@@ -49,23 +49,23 @@
 						"version": 1
 					},
 					"evm": {
-						"assembly": "    /* \"contracts/SpeciesLibrary.sol\":61:2347  library SpeciesLibrary {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/SpeciesLibrary.sol\":61:2347  library SpeciesLibrary {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      revert(0x00, 0x00)\n\n    auxdata: 0xa26469706673582212203e6e2d3db23e83a1c99e336bd592309e7a7552f6d945bba2db726a5fcdcaa9aa64736f6c634300081e0033\n}\n",
+						"assembly": "    /* \"contracts/SpeciesLibrary.sol\":61:2345  library SpeciesLibrary {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/SpeciesLibrary.sol\":61:2345  library SpeciesLibrary {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      revert(0x00, 0x00)\n\n    auxdata: 0xa264697066735822122039307a87ae7c56312ea02a330d0a230b4bbd373da47765a17fc53b7816ffea2e64736f6c634300081e0033\n}\n",
 						"bytecode": {
 							"functionDebugData": {},
 							"generatedSources": [],
 							"linkReferences": {},
-							"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f5ffdfea26469706673582212203e6e2d3db23e83a1c99e336bd592309e7a7552f6d945bba2db726a5fcdcaa9aa64736f6c634300081e0033",
-							"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 RETURNDATACOPY PUSH15 0x2D3DB23E83A1C99E336BD592309E7A PUSH22 0x52F6D945BBA2DB726A5FCDCAA9AA64736F6C63430008 0x1E STOP CALLER ",
-							"sourceMap": "61:2286:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+							"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f5ffdfea264697066735822122039307a87ae7c56312ea02a330d0a230b4bbd373da47765a17fc53b7816ffea2e64736f6c634300081e0033",
+							"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CODECOPY ADDRESS PUSH27 0x87AE7C56312EA02A330D0A230B4BBD373DA47765A17FC53B7816FF 0xEA 0x2E PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
+							"sourceMap": "61:2284:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
 						},
 						"deployedBytecode": {
 							"functionDebugData": {},
 							"generatedSources": [],
 							"immutableReferences": {},
 							"linkReferences": {},
-							"object": "730000000000000000000000000000000000000000301460806040525f5ffdfea26469706673582212203e6e2d3db23e83a1c99e336bd592309e7a7552f6d945bba2db726a5fcdcaa9aa64736f6c634300081e0033",
-							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 RETURNDATACOPY PUSH15 0x2D3DB23E83A1C99E336BD592309E7A PUSH22 0x52F6D945BBA2DB726A5FCDCAA9AA64736F6C63430008 0x1E STOP CALLER ",
-							"sourceMap": "61:2286:0:-:0;;;;;;;;"
+							"object": "730000000000000000000000000000000000000000301460806040525f5ffdfea264697066735822122039307a87ae7c56312ea02a330d0a230b4bbd373da47765a17fc53b7816ffea2e64736f6c634300081e0033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CODECOPY ADDRESS PUSH27 0x87AE7C56312EA02A330D0A230B4BBD373DA47765A17FC53B7816FF 0xEA 0x2E PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
+							"sourceMap": "61:2284:0:-:0;;;;;;;;"
 						},
 						"gasEstimates": {
 							"creation": {
@@ -81,289 +81,289 @@
 							".code": [
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH #[$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH [$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "B"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "CODECOPY",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "DUP1",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "MLOAD",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "BYTE",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "73"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "EQ",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH [tag]",
 									"source": 0,
 									"value": "1"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "JUMPI",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "4E487B7100000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "MSTORE",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "4"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "MSTORE",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "24"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "REVERT",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "tag",
 									"source": 0,
 									"value": "1"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "JUMPDEST",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "ADDRESS",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "MSTORE",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "PUSH",
 									"source": 0,
 									"value": "73"
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "DUP2",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "MSTORE8",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "DUP2",
 									"source": 0
 								},
 								{
 									"begin": 61,
-									"end": 2347,
+									"end": 2345,
 									"name": "RETURN",
 									"source": 0
 								}
 							],
 							".data": {
 								"0": {
-									".auxdata": "a26469706673582212203e6e2d3db23e83a1c99e336bd592309e7a7552f6d945bba2db726a5fcdcaa9aa64736f6c634300081e0033",
+									".auxdata": "a264697066735822122039307a87ae7c56312ea02a330d0a230b4bbd373da47765a17fc53b7816ffea2e64736f6c634300081e0033",
 									".code": [
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "PUSHDEPLOYADDRESS",
 											"source": 0
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "ADDRESS",
 											"source": 0
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "EQ",
 											"source": 0
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "PUSH",
 											"source": 0,
 											"value": "80"
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "PUSH",
 											"source": 0,
 											"value": "40"
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "MSTORE",
 											"source": 0
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "PUSH",
 											"source": 0,
 											"value": "0"
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "PUSH",
 											"source": 0,
 											"value": "0"
 										},
 										{
 											"begin": 61,
-											"end": 2347,
+											"end": 2345,
 											"name": "REVERT",
 											"source": 0
 										}
@@ -377,7 +377,7 @@
 						},
 						"methodIdentifiers": {}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SpeciesLibrary.sol\":\"SpeciesLibrary\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/SpeciesLibrary.sol\":{\"keccak256\":\"0x3ce3984897877990a314be62d7704642fc8d4e4940889fa9f80953d244e0c4e2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e2664a396cdaf155f01b5e4e9a74fcd8fb5d224b168956cefe4d5fd772e8b798\",\"dweb:/ipfs/QmeGyj9sSnMECxxsvNQ3BN7se3oKRxARJVUxYrkKXL866h\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SpeciesLibrary.sol\":\"SpeciesLibrary\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/SpeciesLibrary.sol\":{\"keccak256\":\"0xad204a25d132c6145d22f061e8f50fe9797de3bbf2f4bf4006c663836e085f97\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb29e4917d95ef2cd54941135d937ba38ba9337a724da625bd22416fdf6b020d\",\"dweb:/ipfs/QmUnyHRgai2XWcfeotDkFVpe3L6s9vKSQNAE3e1y4SWfa6\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -456,65 +456,65 @@
 										},
 										{
 											"id": 5,
-											"name": "Mythical",
-											"nameLocation": "181:8:0",
+											"name": "GreyHeron",
+											"nameLocation": "181:9:0",
 											"nodeType": "EnumValue",
-											"src": "181:8:0"
+											"src": "181:9:0"
 										},
 										{
 											"id": 6,
-											"name": "GreyHeron",
-											"nameLocation": "201:9:0",
+											"name": "RedNeckedGrebe",
+											"nameLocation": "202:14:0",
 											"nodeType": "EnumValue",
-											"src": "201:9:0"
+											"src": "202:14:0"
 										},
 										{
 											"id": 7,
-											"name": "RedNeckedGrebe",
-											"nameLocation": "222:14:0",
+											"name": "WaterRail",
+											"nameLocation": "228:9:0",
 											"nodeType": "EnumValue",
-											"src": "222:14:0"
+											"src": "228:9:0"
 										},
 										{
 											"id": 8,
-											"name": "WaterRail",
-											"nameLocation": "248:9:0",
+											"name": "CommonTern",
+											"nameLocation": "249:10:0",
 											"nodeType": "EnumValue",
-											"src": "248:9:0"
+											"src": "249:10:0"
 										},
 										{
 											"id": 9,
-											"name": "CommonTern",
-											"nameLocation": "269:10:0",
+											"name": "Goosander",
+											"nameLocation": "271:9:0",
 											"nodeType": "EnumValue",
-											"src": "269:10:0"
+											"src": "271:9:0"
 										},
 										{
 											"id": 10,
-											"name": "Goosander",
-											"nameLocation": "291:9:0",
+											"name": "GreylagGoose",
+											"nameLocation": "292:12:0",
 											"nodeType": "EnumValue",
-											"src": "291:9:0"
+											"src": "292:12:0"
 										},
 										{
 											"id": 11,
-											"name": "GreylagGoose",
-											"nameLocation": "312:12:0",
+											"name": "Moorhen",
+											"nameLocation": "316:7:0",
 											"nodeType": "EnumValue",
-											"src": "312:12:0"
+											"src": "316:7:0"
 										},
 										{
 											"id": 12,
-											"name": "Moorhen",
-											"nameLocation": "336:7:0",
+											"name": "Mythical",
+											"nameLocation": "334:8:0",
 											"nodeType": "EnumValue",
-											"src": "336:7:0"
+											"src": "334:8:0"
 										}
 									],
 									"name": "Species",
 									"nameLocation": "96:7:0",
 									"nodeType": "EnumDefinition",
-									"src": "91:260:0"
+									"src": "91:258:0"
 								},
 								{
 									"canonicalName": "SpeciesLibrary.SpeciesInfo",
@@ -525,10 +525,10 @@
 											"id": 15,
 											"mutability": "mutable",
 											"name": "maxHealth",
-											"nameLocation": "399:9:0",
+											"nameLocation": "397:9:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 24,
-											"src": "391:17:0",
+											"src": "389:17:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -539,7 +539,7 @@
 												"id": 14,
 												"name": "uint256",
 												"nodeType": "ElementaryTypeName",
-												"src": "391:7:0",
+												"src": "389:7:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
@@ -552,10 +552,10 @@
 											"id": 17,
 											"mutability": "mutable",
 											"name": "maxHunger",
-											"nameLocation": "501:9:0",
+											"nameLocation": "499:9:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 24,
-											"src": "493:17:0",
+											"src": "491:17:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -566,7 +566,7 @@
 												"id": 16,
 												"name": "uint256",
 												"nodeType": "ElementaryTypeName",
-												"src": "493:7:0",
+												"src": "491:7:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
@@ -579,10 +579,10 @@
 											"id": 19,
 											"mutability": "mutable",
 											"name": "hungerDecayRate",
-											"nameLocation": "624:15:0",
+											"nameLocation": "622:15:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 24,
-											"src": "616:23:0",
+											"src": "614:23:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -593,7 +593,7 @@
 												"id": 18,
 												"name": "uint256",
 												"nodeType": "ElementaryTypeName",
-												"src": "616:7:0",
+												"src": "614:7:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
@@ -606,10 +606,10 @@
 											"id": 21,
 											"mutability": "mutable",
 											"name": "poisoningChance",
-											"nameLocation": "702:15:0",
+											"nameLocation": "700:15:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 24,
-											"src": "694:23:0",
+											"src": "692:23:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -620,7 +620,7 @@
 												"id": 20,
 												"name": "uint256",
 												"nodeType": "ElementaryTypeName",
-												"src": "694:7:0",
+												"src": "692:7:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
@@ -633,10 +633,10 @@
 											"id": 23,
 											"mutability": "mutable",
 											"name": "imageUrl",
-											"nameLocation": "757:8:0",
+											"nameLocation": "755:8:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 24,
-											"src": "750:15:0",
+											"src": "748:15:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -647,7 +647,7 @@
 												"id": 22,
 												"name": "string",
 												"nodeType": "ElementaryTypeName",
-												"src": "750:6:0",
+												"src": "748:6:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_string_storage_ptr",
 													"typeString": "string"
@@ -657,17 +657,17 @@
 										}
 									],
 									"name": "SpeciesInfo",
-									"nameLocation": "368:11:0",
+									"nameLocation": "366:11:0",
 									"nodeType": "StructDefinition",
 									"scope": 193,
-									"src": "361:412:0",
+									"src": "359:412:0",
 									"visibility": "public"
 								},
 								{
 									"body": {
 										"id": 191,
 										"nodeType": "Block",
-										"src": "865:1477:0",
+										"src": "863:1477:0",
 										"statements": [
 											{
 												"condition": {
@@ -686,7 +686,7 @@
 														"nodeType": "Identifier",
 														"overloadedDeclarations": [],
 														"referencedDeclaration": 27,
-														"src": "880:7:0",
+														"src": "878:7:0",
 														"typeDescriptions": {
 															"typeIdentifier": "t_enum$_Species_$13",
 															"typeString": "enum SpeciesLibrary.Species"
@@ -701,7 +701,7 @@
 															"nodeType": "Identifier",
 															"overloadedDeclarations": [],
 															"referencedDeclaration": 13,
-															"src": "891:7:0",
+															"src": "889:7:0",
 															"typeDescriptions": {
 																"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																"typeString": "type(enum SpeciesLibrary.Species)"
@@ -712,17 +712,17 @@
 														"isLValue": false,
 														"isPure": true,
 														"lValueRequested": false,
-														"memberLocation": "899:8:0",
+														"memberLocation": "897:8:0",
 														"memberName": "MuteSwan",
 														"nodeType": "MemberAccess",
 														"referencedDeclaration": 2,
-														"src": "891:16:0",
+														"src": "889:16:0",
 														"typeDescriptions": {
 															"typeIdentifier": "t_enum$_Species_$13",
 															"typeString": "enum SpeciesLibrary.Species"
 														}
 													},
-													"src": "880:27:0",
+													"src": "878:27:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_bool",
 														"typeString": "bool"
@@ -745,7 +745,7 @@
 															"nodeType": "Identifier",
 															"overloadedDeclarations": [],
 															"referencedDeclaration": 27,
-															"src": "1077:7:0",
+															"src": "1075:7:0",
 															"typeDescriptions": {
 																"typeIdentifier": "t_enum$_Species_$13",
 																"typeString": "enum SpeciesLibrary.Species"
@@ -760,7 +760,7 @@
 																"nodeType": "Identifier",
 																"overloadedDeclarations": [],
 																"referencedDeclaration": 13,
-																"src": "1088:7:0",
+																"src": "1086:7:0",
 																"typeDescriptions": {
 																	"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																	"typeString": "type(enum SpeciesLibrary.Species)"
@@ -771,17 +771,17 @@
 															"isLValue": false,
 															"isPure": true,
 															"lValueRequested": false,
-															"memberLocation": "1096:10:0",
+															"memberLocation": "1094:10:0",
 															"memberName": "WhiteStork",
 															"nodeType": "MemberAccess",
 															"referencedDeclaration": 3,
-															"src": "1088:18:0",
+															"src": "1086:18:0",
 															"typeDescriptions": {
 																"typeIdentifier": "t_enum$_Species_$13",
 																"typeString": "enum SpeciesLibrary.Species"
 															}
 														},
-														"src": "1077:29:0",
+														"src": "1075:29:0",
 														"typeDescriptions": {
 															"typeIdentifier": "t_bool",
 															"typeString": "bool"
@@ -804,7 +804,7 @@
 																"nodeType": "Identifier",
 																"overloadedDeclarations": [],
 																"referencedDeclaration": 27,
-																"src": "1276:7:0",
+																"src": "1274:7:0",
 																"typeDescriptions": {
 																	"typeIdentifier": "t_enum$_Species_$13",
 																	"typeString": "enum SpeciesLibrary.Species"
@@ -819,7 +819,7 @@
 																	"nodeType": "Identifier",
 																	"overloadedDeclarations": [],
 																	"referencedDeclaration": 13,
-																	"src": "1287:7:0",
+																	"src": "1285:7:0",
 																	"typeDescriptions": {
 																		"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																		"typeString": "type(enum SpeciesLibrary.Species)"
@@ -830,17 +830,17 @@
 																"isLValue": false,
 																"isPure": true,
 																"lValueRequested": false,
-																"memberLocation": "1295:11:0",
+																"memberLocation": "1293:11:0",
 																"memberName": "MallardDuck",
 																"nodeType": "MemberAccess",
 																"referencedDeclaration": 4,
-																"src": "1287:19:0",
+																"src": "1285:19:0",
 																"typeDescriptions": {
 																	"typeIdentifier": "t_enum$_Species_$13",
 																	"typeString": "enum SpeciesLibrary.Species"
 																}
 															},
-															"src": "1276:30:0",
+															"src": "1274:30:0",
 															"typeDescriptions": {
 																"typeIdentifier": "t_bool",
 																"typeString": "bool"
@@ -863,7 +863,7 @@
 																	"nodeType": "Identifier",
 																	"overloadedDeclarations": [],
 																	"referencedDeclaration": 27,
-																	"src": "1474:7:0",
+																	"src": "1472:7:0",
 																	"typeDescriptions": {
 																		"typeIdentifier": "t_enum$_Species_$13",
 																		"typeString": "enum SpeciesLibrary.Species"
@@ -878,7 +878,7 @@
 																		"nodeType": "Identifier",
 																		"overloadedDeclarations": [],
 																		"referencedDeclaration": 13,
-																		"src": "1485:7:0",
+																		"src": "1483:7:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																			"typeString": "type(enum SpeciesLibrary.Species)"
@@ -889,17 +889,17 @@
 																	"isLValue": false,
 																	"isPure": true,
 																	"lValueRequested": false,
-																	"memberLocation": "1493:8:0",
+																	"memberLocation": "1491:8:0",
 																	"memberName": "Mythical",
 																	"nodeType": "MemberAccess",
-																	"referencedDeclaration": 5,
-																	"src": "1485:16:0",
+																	"referencedDeclaration": 12,
+																	"src": "1483:16:0",
 																	"typeDescriptions": {
 																		"typeIdentifier": "t_enum$_Species_$13",
 																		"typeString": "enum SpeciesLibrary.Species"
 																	}
 																},
-																"src": "1474:27:0",
+																"src": "1472:27:0",
 																"typeDescriptions": {
 																	"typeIdentifier": "t_bool",
 																	"typeString": "bool"
@@ -922,7 +922,7 @@
 																		"nodeType": "Identifier",
 																		"overloadedDeclarations": [],
 																		"referencedDeclaration": 27,
-																		"src": "1578:7:0",
+																		"src": "1576:7:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_enum$_Species_$13",
 																			"typeString": "enum SpeciesLibrary.Species"
@@ -937,7 +937,7 @@
 																			"nodeType": "Identifier",
 																			"overloadedDeclarations": [],
 																			"referencedDeclaration": 13,
-																			"src": "1589:7:0",
+																			"src": "1587:7:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																				"typeString": "type(enum SpeciesLibrary.Species)"
@@ -948,17 +948,17 @@
 																		"isLValue": false,
 																		"isPure": true,
 																		"lValueRequested": false,
-																		"memberLocation": "1597:9:0",
+																		"memberLocation": "1595:9:0",
 																		"memberName": "GreyHeron",
 																		"nodeType": "MemberAccess",
-																		"referencedDeclaration": 6,
-																		"src": "1589:17:0",
+																		"referencedDeclaration": 5,
+																		"src": "1587:17:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_enum$_Species_$13",
 																			"typeString": "enum SpeciesLibrary.Species"
 																		}
 																	},
-																	"src": "1578:28:0",
+																	"src": "1576:28:0",
 																	"typeDescriptions": {
 																		"typeIdentifier": "t_bool",
 																		"typeString": "bool"
@@ -981,7 +981,7 @@
 																			"nodeType": "Identifier",
 																			"overloadedDeclarations": [],
 																			"referencedDeclaration": 27,
-																			"src": "1682:7:0",
+																			"src": "1680:7:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_enum$_Species_$13",
 																				"typeString": "enum SpeciesLibrary.Species"
@@ -996,7 +996,7 @@
 																				"nodeType": "Identifier",
 																				"overloadedDeclarations": [],
 																				"referencedDeclaration": 13,
-																				"src": "1693:7:0",
+																				"src": "1691:7:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																					"typeString": "type(enum SpeciesLibrary.Species)"
@@ -1007,17 +1007,17 @@
 																			"isLValue": false,
 																			"isPure": true,
 																			"lValueRequested": false,
-																			"memberLocation": "1701:14:0",
+																			"memberLocation": "1699:14:0",
 																			"memberName": "RedNeckedGrebe",
 																			"nodeType": "MemberAccess",
-																			"referencedDeclaration": 7,
-																			"src": "1693:22:0",
+																			"referencedDeclaration": 6,
+																			"src": "1691:22:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_enum$_Species_$13",
 																				"typeString": "enum SpeciesLibrary.Species"
 																			}
 																		},
-																		"src": "1682:33:0",
+																		"src": "1680:33:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_bool",
 																			"typeString": "bool"
@@ -1040,7 +1040,7 @@
 																				"nodeType": "Identifier",
 																				"overloadedDeclarations": [],
 																				"referencedDeclaration": 27,
-																				"src": "1790:7:0",
+																				"src": "1788:7:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_enum$_Species_$13",
 																					"typeString": "enum SpeciesLibrary.Species"
@@ -1055,7 +1055,7 @@
 																					"nodeType": "Identifier",
 																					"overloadedDeclarations": [],
 																					"referencedDeclaration": 13,
-																					"src": "1801:7:0",
+																					"src": "1799:7:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																						"typeString": "type(enum SpeciesLibrary.Species)"
@@ -1066,17 +1066,17 @@
 																				"isLValue": false,
 																				"isPure": true,
 																				"lValueRequested": false,
-																				"memberLocation": "1809:9:0",
+																				"memberLocation": "1807:9:0",
 																				"memberName": "WaterRail",
 																				"nodeType": "MemberAccess",
-																				"referencedDeclaration": 8,
-																				"src": "1801:17:0",
+																				"referencedDeclaration": 7,
+																				"src": "1799:17:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_enum$_Species_$13",
 																					"typeString": "enum SpeciesLibrary.Species"
 																				}
 																			},
-																			"src": "1790:28:0",
+																			"src": "1788:28:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_bool",
 																				"typeString": "bool"
@@ -1099,7 +1099,7 @@
 																					"nodeType": "Identifier",
 																					"overloadedDeclarations": [],
 																					"referencedDeclaration": 27,
-																					"src": "1893:7:0",
+																					"src": "1891:7:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_enum$_Species_$13",
 																						"typeString": "enum SpeciesLibrary.Species"
@@ -1114,7 +1114,7 @@
 																						"nodeType": "Identifier",
 																						"overloadedDeclarations": [],
 																						"referencedDeclaration": 13,
-																						"src": "1904:7:0",
+																						"src": "1902:7:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																							"typeString": "type(enum SpeciesLibrary.Species)"
@@ -1125,17 +1125,17 @@
 																					"isLValue": false,
 																					"isPure": true,
 																					"lValueRequested": false,
-																					"memberLocation": "1912:10:0",
+																					"memberLocation": "1910:10:0",
 																					"memberName": "CommonTern",
 																					"nodeType": "MemberAccess",
-																					"referencedDeclaration": 9,
-																					"src": "1904:18:0",
+																					"referencedDeclaration": 8,
+																					"src": "1902:18:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_enum$_Species_$13",
 																						"typeString": "enum SpeciesLibrary.Species"
 																					}
 																				},
-																				"src": "1893:29:0",
+																				"src": "1891:29:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_bool",
 																					"typeString": "bool"
@@ -1158,7 +1158,7 @@
 																						"nodeType": "Identifier",
 																						"overloadedDeclarations": [],
 																						"referencedDeclaration": 27,
-																						"src": "1997:7:0",
+																						"src": "1995:7:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_enum$_Species_$13",
 																							"typeString": "enum SpeciesLibrary.Species"
@@ -1173,7 +1173,7 @@
 																							"nodeType": "Identifier",
 																							"overloadedDeclarations": [],
 																							"referencedDeclaration": 13,
-																							"src": "2008:7:0",
+																							"src": "2006:7:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																								"typeString": "type(enum SpeciesLibrary.Species)"
@@ -1184,17 +1184,17 @@
 																						"isLValue": false,
 																						"isPure": true,
 																						"lValueRequested": false,
-																						"memberLocation": "2016:9:0",
+																						"memberLocation": "2014:9:0",
 																						"memberName": "Goosander",
 																						"nodeType": "MemberAccess",
-																						"referencedDeclaration": 10,
-																						"src": "2008:17:0",
+																						"referencedDeclaration": 9,
+																						"src": "2006:17:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_enum$_Species_$13",
 																							"typeString": "enum SpeciesLibrary.Species"
 																						}
 																					},
-																					"src": "1997:28:0",
+																					"src": "1995:28:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_bool",
 																						"typeString": "bool"
@@ -1217,7 +1217,7 @@
 																							"nodeType": "Identifier",
 																							"overloadedDeclarations": [],
 																							"referencedDeclaration": 27,
-																							"src": "2100:7:0",
+																							"src": "2098:7:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_enum$_Species_$13",
 																								"typeString": "enum SpeciesLibrary.Species"
@@ -1232,7 +1232,7 @@
 																								"nodeType": "Identifier",
 																								"overloadedDeclarations": [],
 																								"referencedDeclaration": 13,
-																								"src": "2111:7:0",
+																								"src": "2109:7:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																									"typeString": "type(enum SpeciesLibrary.Species)"
@@ -1243,17 +1243,17 @@
 																							"isLValue": false,
 																							"isPure": true,
 																							"lValueRequested": false,
-																							"memberLocation": "2119:12:0",
+																							"memberLocation": "2117:12:0",
 																							"memberName": "GreylagGoose",
 																							"nodeType": "MemberAccess",
-																							"referencedDeclaration": 11,
-																							"src": "2111:20:0",
+																							"referencedDeclaration": 10,
+																							"src": "2109:20:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_enum$_Species_$13",
 																								"typeString": "enum SpeciesLibrary.Species"
 																							}
 																						},
-																						"src": "2100:31:0",
+																						"src": "2098:31:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_bool",
 																							"typeString": "bool"
@@ -1276,7 +1276,7 @@
 																								"nodeType": "Identifier",
 																								"overloadedDeclarations": [],
 																								"referencedDeclaration": 27,
-																								"src": "2208:7:0",
+																								"src": "2206:7:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_enum$_Species_$13",
 																									"typeString": "enum SpeciesLibrary.Species"
@@ -1291,7 +1291,7 @@
 																									"nodeType": "Identifier",
 																									"overloadedDeclarations": [],
 																									"referencedDeclaration": 13,
-																									"src": "2219:7:0",
+																									"src": "2217:7:0",
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_type$_t_enum$_Species_$13_$",
 																										"typeString": "type(enum SpeciesLibrary.Species)"
@@ -1302,17 +1302,17 @@
 																								"isLValue": false,
 																								"isPure": true,
 																								"lValueRequested": false,
-																								"memberLocation": "2227:7:0",
+																								"memberLocation": "2225:7:0",
 																								"memberName": "Moorhen",
 																								"nodeType": "MemberAccess",
-																								"referencedDeclaration": 12,
-																								"src": "2219:15:0",
+																								"referencedDeclaration": 11,
+																								"src": "2217:15:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_enum$_Species_$13",
 																									"typeString": "enum SpeciesLibrary.Species"
 																								}
 																							},
-																							"src": "2208:26:0",
+																							"src": "2206:26:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_bool",
 																								"typeString": "bool"
@@ -1320,11 +1320,11 @@
 																						},
 																						"id": 176,
 																						"nodeType": "IfStatement",
-																						"src": "2204:95:0",
+																						"src": "2202:95:0",
 																						"trueBody": {
 																							"id": 175,
 																							"nodeType": "Block",
-																							"src": "2236:63:0",
+																							"src": "2234:63:0",
 																							"statements": [
 																								{
 																									"expression": {
@@ -1338,7 +1338,7 @@
 																												"kind": "number",
 																												"lValueRequested": false,
 																												"nodeType": "Literal",
-																												"src": "2270:2:0",
+																												"src": "2268:2:0",
 																												"typeDescriptions": {
 																													"typeIdentifier": "t_rational_35_by_1",
 																													"typeString": "int_const 35"
@@ -1354,7 +1354,7 @@
 																												"kind": "number",
 																												"lValueRequested": false,
 																												"nodeType": "Literal",
-																												"src": "2274:2:0",
+																												"src": "2272:2:0",
 																												"typeDescriptions": {
 																													"typeIdentifier": "t_rational_66_by_1",
 																													"typeString": "int_const 66"
@@ -1370,7 +1370,7 @@
 																												"kind": "number",
 																												"lValueRequested": false,
 																												"nodeType": "Literal",
-																												"src": "2278:1:0",
+																												"src": "2276:1:0",
 																												"typeDescriptions": {
 																													"typeIdentifier": "t_rational_4_by_1",
 																													"typeString": "int_const 4"
@@ -1386,7 +1386,7 @@
 																												"kind": "number",
 																												"lValueRequested": false,
 																												"nodeType": "Literal",
-																												"src": "2281:1:0",
+																												"src": "2279:1:0",
 																												"typeDescriptions": {
 																													"typeIdentifier": "t_rational_5_by_1",
 																													"typeString": "int_const 5"
@@ -1402,7 +1402,7 @@
 																												"kind": "string",
 																												"lValueRequested": false,
 																												"nodeType": "Literal",
-																												"src": "2284:2:0",
+																												"src": "2282:2:0",
 																												"typeDescriptions": {
 																													"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																													"typeString": "literal_string \"\""
@@ -1438,7 +1438,7 @@
 																											"nodeType": "Identifier",
 																											"overloadedDeclarations": [],
 																											"referencedDeclaration": 24,
-																											"src": "2258:11:0",
+																											"src": "2256:11:0",
 																											"typeDescriptions": {
 																												"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																												"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -1453,7 +1453,7 @@
 																										"nameLocations": [],
 																										"names": [],
 																										"nodeType": "FunctionCall",
-																										"src": "2258:29:0",
+																										"src": "2256:29:0",
 																										"tryCall": false,
 																										"typeDescriptions": {
 																											"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -1463,18 +1463,18 @@
 																									"functionReturnParameters": 32,
 																									"id": 174,
 																									"nodeType": "Return",
-																									"src": "2251:36:0"
+																									"src": "2249:36:0"
 																								}
 																							]
 																						}
 																					},
 																					"id": 177,
 																					"nodeType": "IfStatement",
-																					"src": "2096:203:0",
+																					"src": "2094:203:0",
 																					"trueBody": {
 																						"id": 162,
 																						"nodeType": "Block",
-																						"src": "2133:65:0",
+																						"src": "2131:65:0",
 																						"statements": [
 																							{
 																								"expression": {
@@ -1488,7 +1488,7 @@
 																											"kind": "number",
 																											"lValueRequested": false,
 																											"nodeType": "Literal",
-																											"src": "2167:3:0",
+																											"src": "2165:3:0",
 																											"typeDescriptions": {
 																												"typeIdentifier": "t_rational_150_by_1",
 																												"typeString": "int_const 150"
@@ -1504,7 +1504,7 @@
 																											"kind": "number",
 																											"lValueRequested": false,
 																											"nodeType": "Literal",
-																											"src": "2172:3:0",
+																											"src": "2170:3:0",
 																											"typeDescriptions": {
 																												"typeIdentifier": "t_rational_100_by_1",
 																												"typeString": "int_const 100"
@@ -1520,7 +1520,7 @@
 																											"kind": "number",
 																											"lValueRequested": false,
 																											"nodeType": "Literal",
-																											"src": "2177:1:0",
+																											"src": "2175:1:0",
 																											"typeDescriptions": {
 																												"typeIdentifier": "t_rational_4_by_1",
 																												"typeString": "int_const 4"
@@ -1536,7 +1536,7 @@
 																											"kind": "number",
 																											"lValueRequested": false,
 																											"nodeType": "Literal",
-																											"src": "2180:1:0",
+																											"src": "2178:1:0",
 																											"typeDescriptions": {
 																												"typeIdentifier": "t_rational_3_by_1",
 																												"typeString": "int_const 3"
@@ -1552,7 +1552,7 @@
 																											"kind": "string",
 																											"lValueRequested": false,
 																											"nodeType": "Literal",
-																											"src": "2183:2:0",
+																											"src": "2181:2:0",
 																											"typeDescriptions": {
 																												"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																												"typeString": "literal_string \"\""
@@ -1588,7 +1588,7 @@
 																										"nodeType": "Identifier",
 																										"overloadedDeclarations": [],
 																										"referencedDeclaration": 24,
-																										"src": "2155:11:0",
+																										"src": "2153:11:0",
 																										"typeDescriptions": {
 																											"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																											"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -1603,7 +1603,7 @@
 																									"nameLocations": [],
 																									"names": [],
 																									"nodeType": "FunctionCall",
-																									"src": "2155:31:0",
+																									"src": "2153:31:0",
 																									"tryCall": false,
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -1613,18 +1613,18 @@
 																								"functionReturnParameters": 32,
 																								"id": 161,
 																								"nodeType": "Return",
-																								"src": "2148:38:0"
+																								"src": "2146:38:0"
 																							}
 																						]
 																					}
 																				},
 																				"id": 178,
 																				"nodeType": "IfStatement",
-																				"src": "1993:306:0",
+																				"src": "1991:306:0",
 																				"trueBody": {
 																					"id": 149,
 																					"nodeType": "Block",
-																					"src": "2027:63:0",
+																					"src": "2025:63:0",
 																					"statements": [
 																						{
 																							"expression": {
@@ -1638,7 +1638,7 @@
 																										"kind": "number",
 																										"lValueRequested": false,
 																										"nodeType": "Literal",
-																										"src": "2061:2:0",
+																										"src": "2059:2:0",
 																										"typeDescriptions": {
 																											"typeIdentifier": "t_rational_78_by_1",
 																											"typeString": "int_const 78"
@@ -1654,7 +1654,7 @@
 																										"kind": "number",
 																										"lValueRequested": false,
 																										"nodeType": "Literal",
-																										"src": "2065:2:0",
+																										"src": "2063:2:0",
 																										"typeDescriptions": {
 																											"typeIdentifier": "t_rational_65_by_1",
 																											"typeString": "int_const 65"
@@ -1670,7 +1670,7 @@
 																										"kind": "number",
 																										"lValueRequested": false,
 																										"nodeType": "Literal",
-																										"src": "2069:1:0",
+																										"src": "2067:1:0",
 																										"typeDescriptions": {
 																											"typeIdentifier": "t_rational_2_by_1",
 																											"typeString": "int_const 2"
@@ -1686,7 +1686,7 @@
 																										"kind": "number",
 																										"lValueRequested": false,
 																										"nodeType": "Literal",
-																										"src": "2072:1:0",
+																										"src": "2070:1:0",
 																										"typeDescriptions": {
 																											"typeIdentifier": "t_rational_4_by_1",
 																											"typeString": "int_const 4"
@@ -1702,7 +1702,7 @@
 																										"kind": "string",
 																										"lValueRequested": false,
 																										"nodeType": "Literal",
-																										"src": "2075:2:0",
+																										"src": "2073:2:0",
 																										"typeDescriptions": {
 																											"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																											"typeString": "literal_string \"\""
@@ -1738,7 +1738,7 @@
 																									"nodeType": "Identifier",
 																									"overloadedDeclarations": [],
 																									"referencedDeclaration": 24,
-																									"src": "2049:11:0",
+																									"src": "2047:11:0",
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																										"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -1753,7 +1753,7 @@
 																								"nameLocations": [],
 																								"names": [],
 																								"nodeType": "FunctionCall",
-																								"src": "2049:29:0",
+																								"src": "2047:29:0",
 																								"tryCall": false,
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -1763,18 +1763,18 @@
 																							"functionReturnParameters": 32,
 																							"id": 148,
 																							"nodeType": "Return",
-																							"src": "2042:36:0"
+																							"src": "2040:36:0"
 																						}
 																					]
 																				}
 																			},
 																			"id": 179,
 																			"nodeType": "IfStatement",
-																			"src": "1889:410:0",
+																			"src": "1887:410:0",
 																			"trueBody": {
 																				"id": 136,
 																				"nodeType": "Block",
-																				"src": "1924:63:0",
+																				"src": "1922:63:0",
 																				"statements": [
 																					{
 																						"expression": {
@@ -1788,7 +1788,7 @@
 																									"kind": "number",
 																									"lValueRequested": false,
 																									"nodeType": "Literal",
-																									"src": "1958:2:0",
+																									"src": "1956:2:0",
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_rational_55_by_1",
 																										"typeString": "int_const 55"
@@ -1804,7 +1804,7 @@
 																									"kind": "number",
 																									"lValueRequested": false,
 																									"nodeType": "Literal",
-																									"src": "1962:2:0",
+																									"src": "1960:2:0",
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_rational_40_by_1",
 																										"typeString": "int_const 40"
@@ -1820,7 +1820,7 @@
 																									"kind": "number",
 																									"lValueRequested": false,
 																									"nodeType": "Literal",
-																									"src": "1966:1:0",
+																									"src": "1964:1:0",
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_rational_3_by_1",
 																										"typeString": "int_const 3"
@@ -1836,7 +1836,7 @@
 																									"kind": "number",
 																									"lValueRequested": false,
 																									"nodeType": "Literal",
-																									"src": "1969:1:0",
+																									"src": "1967:1:0",
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_rational_4_by_1",
 																										"typeString": "int_const 4"
@@ -1852,7 +1852,7 @@
 																									"kind": "string",
 																									"lValueRequested": false,
 																									"nodeType": "Literal",
-																									"src": "1972:2:0",
+																									"src": "1970:2:0",
 																									"typeDescriptions": {
 																										"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																										"typeString": "literal_string \"\""
@@ -1888,7 +1888,7 @@
 																								"nodeType": "Identifier",
 																								"overloadedDeclarations": [],
 																								"referencedDeclaration": 24,
-																								"src": "1946:11:0",
+																								"src": "1944:11:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																									"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -1903,7 +1903,7 @@
 																							"nameLocations": [],
 																							"names": [],
 																							"nodeType": "FunctionCall",
-																							"src": "1946:29:0",
+																							"src": "1944:29:0",
 																							"tryCall": false,
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -1913,18 +1913,18 @@
 																						"functionReturnParameters": 32,
 																						"id": 135,
 																						"nodeType": "Return",
-																						"src": "1939:36:0"
+																						"src": "1937:36:0"
 																					}
 																				]
 																			}
 																		},
 																		"id": 180,
 																		"nodeType": "IfStatement",
-																		"src": "1786:513:0",
+																		"src": "1784:513:0",
 																		"trueBody": {
 																			"id": 123,
 																			"nodeType": "Block",
-																			"src": "1820:63:0",
+																			"src": "1818:63:0",
 																			"statements": [
 																				{
 																					"expression": {
@@ -1938,7 +1938,7 @@
 																								"kind": "number",
 																								"lValueRequested": false,
 																								"nodeType": "Literal",
-																								"src": "1854:2:0",
+																								"src": "1852:2:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_rational_50_by_1",
 																									"typeString": "int_const 50"
@@ -1954,7 +1954,7 @@
 																								"kind": "number",
 																								"lValueRequested": false,
 																								"nodeType": "Literal",
-																								"src": "1858:2:0",
+																								"src": "1856:2:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_rational_60_by_1",
 																									"typeString": "int_const 60"
@@ -1970,7 +1970,7 @@
 																								"kind": "number",
 																								"lValueRequested": false,
 																								"nodeType": "Literal",
-																								"src": "1862:1:0",
+																								"src": "1860:1:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_rational_4_by_1",
 																									"typeString": "int_const 4"
@@ -1986,7 +1986,7 @@
 																								"kind": "number",
 																								"lValueRequested": false,
 																								"nodeType": "Literal",
-																								"src": "1865:1:0",
+																								"src": "1863:1:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_rational_5_by_1",
 																									"typeString": "int_const 5"
@@ -2002,7 +2002,7 @@
 																								"kind": "string",
 																								"lValueRequested": false,
 																								"nodeType": "Literal",
-																								"src": "1868:2:0",
+																								"src": "1866:2:0",
 																								"typeDescriptions": {
 																									"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																									"typeString": "literal_string \"\""
@@ -2038,7 +2038,7 @@
 																							"nodeType": "Identifier",
 																							"overloadedDeclarations": [],
 																							"referencedDeclaration": 24,
-																							"src": "1842:11:0",
+																							"src": "1840:11:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																								"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -2053,7 +2053,7 @@
 																						"nameLocations": [],
 																						"names": [],
 																						"nodeType": "FunctionCall",
-																						"src": "1842:29:0",
+																						"src": "1840:29:0",
 																						"tryCall": false,
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -2063,18 +2063,18 @@
 																					"functionReturnParameters": 32,
 																					"id": 122,
 																					"nodeType": "Return",
-																					"src": "1835:36:0"
+																					"src": "1833:36:0"
 																				}
 																			]
 																		}
 																	},
 																	"id": 181,
 																	"nodeType": "IfStatement",
-																	"src": "1678:621:0",
+																	"src": "1676:621:0",
 																	"trueBody": {
 																		"id": 110,
 																		"nodeType": "Block",
-																		"src": "1717:63:0",
+																		"src": "1715:63:0",
 																		"statements": [
 																			{
 																				"expression": {
@@ -2088,7 +2088,7 @@
 																							"kind": "number",
 																							"lValueRequested": false,
 																							"nodeType": "Literal",
-																							"src": "1751:2:0",
+																							"src": "1749:2:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_rational_80_by_1",
 																								"typeString": "int_const 80"
@@ -2104,7 +2104,7 @@
 																							"kind": "number",
 																							"lValueRequested": false,
 																							"nodeType": "Literal",
-																							"src": "1755:2:0",
+																							"src": "1753:2:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_rational_70_by_1",
 																								"typeString": "int_const 70"
@@ -2120,7 +2120,7 @@
 																							"kind": "number",
 																							"lValueRequested": false,
 																							"nodeType": "Literal",
-																							"src": "1759:1:0",
+																							"src": "1757:1:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_rational_2_by_1",
 																								"typeString": "int_const 2"
@@ -2136,7 +2136,7 @@
 																							"kind": "number",
 																							"lValueRequested": false,
 																							"nodeType": "Literal",
-																							"src": "1762:1:0",
+																							"src": "1760:1:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_rational_8_by_1",
 																								"typeString": "int_const 8"
@@ -2152,7 +2152,7 @@
 																							"kind": "string",
 																							"lValueRequested": false,
 																							"nodeType": "Literal",
-																							"src": "1765:2:0",
+																							"src": "1763:2:0",
 																							"typeDescriptions": {
 																								"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																								"typeString": "literal_string \"\""
@@ -2188,7 +2188,7 @@
 																						"nodeType": "Identifier",
 																						"overloadedDeclarations": [],
 																						"referencedDeclaration": 24,
-																						"src": "1739:11:0",
+																						"src": "1737:11:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																							"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -2203,7 +2203,7 @@
 																					"nameLocations": [],
 																					"names": [],
 																					"nodeType": "FunctionCall",
-																					"src": "1739:29:0",
+																					"src": "1737:29:0",
 																					"tryCall": false,
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -2213,18 +2213,18 @@
 																				"functionReturnParameters": 32,
 																				"id": 109,
 																				"nodeType": "Return",
-																				"src": "1732:36:0"
+																				"src": "1730:36:0"
 																			}
 																		]
 																	}
 																},
 																"id": 182,
 																"nodeType": "IfStatement",
-																"src": "1574:725:0",
+																"src": "1572:725:0",
 																"trueBody": {
 																	"id": 97,
 																	"nodeType": "Block",
-																	"src": "1608:64:0",
+																	"src": "1606:64:0",
 																	"statements": [
 																		{
 																			"expression": {
@@ -2238,7 +2238,7 @@
 																						"kind": "number",
 																						"lValueRequested": false,
 																						"nodeType": "Literal",
-																						"src": "1642:3:0",
+																						"src": "1640:3:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_rational_180_by_1",
 																							"typeString": "int_const 180"
@@ -2254,7 +2254,7 @@
 																						"kind": "number",
 																						"lValueRequested": false,
 																						"nodeType": "Literal",
-																						"src": "1647:2:0",
+																						"src": "1645:2:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_rational_90_by_1",
 																							"typeString": "int_const 90"
@@ -2270,7 +2270,7 @@
 																						"kind": "number",
 																						"lValueRequested": false,
 																						"nodeType": "Literal",
-																						"src": "1651:1:0",
+																						"src": "1649:1:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_rational_2_by_1",
 																							"typeString": "int_const 2"
@@ -2286,7 +2286,7 @@
 																						"kind": "number",
 																						"lValueRequested": false,
 																						"nodeType": "Literal",
-																						"src": "1654:1:0",
+																						"src": "1652:1:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_rational_4_by_1",
 																							"typeString": "int_const 4"
@@ -2302,7 +2302,7 @@
 																						"kind": "string",
 																						"lValueRequested": false,
 																						"nodeType": "Literal",
-																						"src": "1657:2:0",
+																						"src": "1655:2:0",
 																						"typeDescriptions": {
 																							"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																							"typeString": "literal_string \"\""
@@ -2338,7 +2338,7 @@
 																					"nodeType": "Identifier",
 																					"overloadedDeclarations": [],
 																					"referencedDeclaration": 24,
-																					"src": "1630:11:0",
+																					"src": "1628:11:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																						"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -2353,7 +2353,7 @@
 																				"nameLocations": [],
 																				"names": [],
 																				"nodeType": "FunctionCall",
-																				"src": "1630:30:0",
+																				"src": "1628:30:0",
 																				"tryCall": false,
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -2363,18 +2363,18 @@
 																			"functionReturnParameters": 32,
 																			"id": 96,
 																			"nodeType": "Return",
-																			"src": "1623:37:0"
+																			"src": "1621:37:0"
 																		}
 																	]
 																}
 															},
 															"id": 183,
 															"nodeType": "IfStatement",
-															"src": "1470:829:0",
+															"src": "1468:829:0",
 															"trueBody": {
 																"id": 84,
 																"nodeType": "Block",
-																"src": "1503:65:0",
+																"src": "1501:65:0",
 																"statements": [
 																	{
 																		"expression": {
@@ -2388,7 +2388,7 @@
 																					"kind": "number",
 																					"lValueRequested": false,
 																					"nodeType": "Literal",
-																					"src": "1537:3:0",
+																					"src": "1535:3:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_rational_300_by_1",
 																						"typeString": "int_const 300"
@@ -2404,7 +2404,7 @@
 																					"kind": "number",
 																					"lValueRequested": false,
 																					"nodeType": "Literal",
-																					"src": "1542:3:0",
+																					"src": "1540:3:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_rational_300_by_1",
 																						"typeString": "int_const 300"
@@ -2420,7 +2420,7 @@
 																					"kind": "number",
 																					"lValueRequested": false,
 																					"nodeType": "Literal",
-																					"src": "1547:1:0",
+																					"src": "1545:1:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_rational_1_by_1",
 																						"typeString": "int_const 1"
@@ -2436,7 +2436,7 @@
 																					"kind": "number",
 																					"lValueRequested": false,
 																					"nodeType": "Literal",
-																					"src": "1550:1:0",
+																					"src": "1548:1:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_rational_0_by_1",
 																						"typeString": "int_const 0"
@@ -2452,7 +2452,7 @@
 																					"kind": "string",
 																					"lValueRequested": false,
 																					"nodeType": "Literal",
-																					"src": "1553:2:0",
+																					"src": "1551:2:0",
 																					"typeDescriptions": {
 																						"typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
 																						"typeString": "literal_string \"\""
@@ -2488,7 +2488,7 @@
 																				"nodeType": "Identifier",
 																				"overloadedDeclarations": [],
 																				"referencedDeclaration": 24,
-																				"src": "1525:11:0",
+																				"src": "1523:11:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																					"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -2503,7 +2503,7 @@
 																			"nameLocations": [],
 																			"names": [],
 																			"nodeType": "FunctionCall",
-																			"src": "1525:31:0",
+																			"src": "1523:31:0",
 																			"tryCall": false,
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -2513,18 +2513,18 @@
 																		"functionReturnParameters": 32,
 																		"id": 83,
 																		"nodeType": "Return",
-																		"src": "1518:38:0"
+																		"src": "1516:38:0"
 																	}
 																]
 															}
 														},
 														"id": 184,
 														"nodeType": "IfStatement",
-														"src": "1272:1027:0",
+														"src": "1270:1027:0",
 														"trueBody": {
 															"id": 71,
 															"nodeType": "Block",
-															"src": "1308:156:0",
+															"src": "1306:156:0",
 															"statements": [
 																{
 																	"expression": {
@@ -2538,7 +2538,7 @@
 																				"kind": "number",
 																				"lValueRequested": false,
 																				"nodeType": "Literal",
-																				"src": "1342:2:0",
+																				"src": "1340:2:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_rational_80_by_1",
 																					"typeString": "int_const 80"
@@ -2554,7 +2554,7 @@
 																				"kind": "number",
 																				"lValueRequested": false,
 																				"nodeType": "Literal",
-																				"src": "1346:2:0",
+																				"src": "1344:2:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_rational_80_by_1",
 																					"typeString": "int_const 80"
@@ -2570,7 +2570,7 @@
 																				"kind": "number",
 																				"lValueRequested": false,
 																				"nodeType": "Literal",
-																				"src": "1350:1:0",
+																				"src": "1348:1:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_rational_3_by_1",
 																					"typeString": "int_const 3"
@@ -2586,7 +2586,7 @@
 																				"kind": "number",
 																				"lValueRequested": false,
 																				"nodeType": "Literal",
-																				"src": "1353:1:0",
+																				"src": "1351:1:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_rational_6_by_1",
 																					"typeString": "int_const 6"
@@ -2602,7 +2602,7 @@
 																				"kind": "string",
 																				"lValueRequested": false,
 																				"nodeType": "Literal",
-																				"src": "1356:95:0",
+																				"src": "1354:95:0",
 																				"typeDescriptions": {
 																					"typeIdentifier": "t_stringliteral_3bbf1c81af77207dbf9db8f891697113273de930322fc10149aebcb2d416dad6",
 																					"typeString": "literal_string \"https://gateway.pinata.cloud/ipfs/bafybeiev7pucz7yh7x6haidmphp5ieobvcfdclnlwjqa2ivs4y357pvwma\""
@@ -2638,7 +2638,7 @@
 																			"nodeType": "Identifier",
 																			"overloadedDeclarations": [],
 																			"referencedDeclaration": 24,
-																			"src": "1330:11:0",
+																			"src": "1328:11:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																				"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -2653,7 +2653,7 @@
 																		"nameLocations": [],
 																		"names": [],
 																		"nodeType": "FunctionCall",
-																		"src": "1330:122:0",
+																		"src": "1328:122:0",
 																		"tryCall": false,
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -2663,18 +2663,18 @@
 																	"functionReturnParameters": 32,
 																	"id": 70,
 																	"nodeType": "Return",
-																	"src": "1323:129:0"
+																	"src": "1321:129:0"
 																}
 															]
 														}
 													},
 													"id": 185,
 													"nodeType": "IfStatement",
-													"src": "1073:1226:0",
+													"src": "1071:1226:0",
 													"trueBody": {
 														"id": 58,
 														"nodeType": "Block",
-														"src": "1108:158:0",
+														"src": "1106:158:0",
 														"statements": [
 															{
 																"expression": {
@@ -2688,7 +2688,7 @@
 																			"kind": "number",
 																			"lValueRequested": false,
 																			"nodeType": "Literal",
-																			"src": "1142:3:0",
+																			"src": "1140:3:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_rational_220_by_1",
 																				"typeString": "int_const 220"
@@ -2704,7 +2704,7 @@
 																			"kind": "number",
 																			"lValueRequested": false,
 																			"nodeType": "Literal",
-																			"src": "1147:3:0",
+																			"src": "1145:3:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_rational_200_by_1",
 																				"typeString": "int_const 200"
@@ -2720,7 +2720,7 @@
 																			"kind": "number",
 																			"lValueRequested": false,
 																			"nodeType": "Literal",
-																			"src": "1152:1:0",
+																			"src": "1150:1:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_rational_2_by_1",
 																				"typeString": "int_const 2"
@@ -2736,7 +2736,7 @@
 																			"kind": "number",
 																			"lValueRequested": false,
 																			"nodeType": "Literal",
-																			"src": "1155:1:0",
+																			"src": "1153:1:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_rational_5_by_1",
 																				"typeString": "int_const 5"
@@ -2752,7 +2752,7 @@
 																			"kind": "string",
 																			"lValueRequested": false,
 																			"nodeType": "Literal",
-																			"src": "1158:95:0",
+																			"src": "1156:95:0",
 																			"typeDescriptions": {
 																				"typeIdentifier": "t_stringliteral_86e92b1a76e2f297d69c89af4232d1b3e647fd322843457f38b762c99d8ee708",
 																				"typeString": "literal_string \"https://gateway.pinata.cloud/ipfs/bafybeigohotok6k3onvtjyypfnbnzbcso2qcixbwz4wh64vp2n3lq7nksa\""
@@ -2788,7 +2788,7 @@
 																		"nodeType": "Identifier",
 																		"overloadedDeclarations": [],
 																		"referencedDeclaration": 24,
-																		"src": "1130:11:0",
+																		"src": "1128:11:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																			"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -2803,7 +2803,7 @@
 																	"nameLocations": [],
 																	"names": [],
 																	"nodeType": "FunctionCall",
-																	"src": "1130:124:0",
+																	"src": "1128:124:0",
 																	"tryCall": false,
 																	"typeDescriptions": {
 																		"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -2813,18 +2813,18 @@
 																"functionReturnParameters": 32,
 																"id": 57,
 																"nodeType": "Return",
-																"src": "1123:131:0"
+																"src": "1121:131:0"
 															}
 														]
 													}
 												},
 												"id": 186,
 												"nodeType": "IfStatement",
-												"src": "876:1423:0",
+												"src": "874:1423:0",
 												"trueBody": {
 													"id": 45,
 													"nodeType": "Block",
-													"src": "909:158:0",
+													"src": "907:158:0",
 													"statements": [
 														{
 															"expression": {
@@ -2838,7 +2838,7 @@
 																		"kind": "number",
 																		"lValueRequested": false,
 																		"nodeType": "Literal",
-																		"src": "943:3:0",
+																		"src": "941:3:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_rational_200_by_1",
 																			"typeString": "int_const 200"
@@ -2854,7 +2854,7 @@
 																		"kind": "number",
 																		"lValueRequested": false,
 																		"nodeType": "Literal",
-																		"src": "948:3:0",
+																		"src": "946:3:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_rational_150_by_1",
 																			"typeString": "int_const 150"
@@ -2870,7 +2870,7 @@
 																		"kind": "number",
 																		"lValueRequested": false,
 																		"nodeType": "Literal",
-																		"src": "953:1:0",
+																		"src": "951:1:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_rational_3_by_1",
 																			"typeString": "int_const 3"
@@ -2886,7 +2886,7 @@
 																		"kind": "number",
 																		"lValueRequested": false,
 																		"nodeType": "Literal",
-																		"src": "956:1:0",
+																		"src": "954:1:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_rational_1_by_1",
 																			"typeString": "int_const 1"
@@ -2902,7 +2902,7 @@
 																		"kind": "string",
 																		"lValueRequested": false,
 																		"nodeType": "Literal",
-																		"src": "959:95:0",
+																		"src": "957:95:0",
 																		"typeDescriptions": {
 																			"typeIdentifier": "t_stringliteral_1ffc5c99f8ff866cb3cb9bd46d45453badb8f26649052a31a9be49b9b43149da",
 																			"typeString": "literal_string \"https://gateway.pinata.cloud/ipfs/bafybeia3le4astknh2p4mbkd5w42j522tnse4wxk7w5m7wimoqdp6ouzpy\""
@@ -2938,7 +2938,7 @@
 																	"nodeType": "Identifier",
 																	"overloadedDeclarations": [],
 																	"referencedDeclaration": 24,
-																	"src": "931:11:0",
+																	"src": "929:11:0",
 																	"typeDescriptions": {
 																		"typeIdentifier": "t_type$_t_struct$_SpeciesInfo_$24_storage_ptr_$",
 																		"typeString": "type(struct SpeciesLibrary.SpeciesInfo storage pointer)"
@@ -2953,7 +2953,7 @@
 																"nameLocations": [],
 																"names": [],
 																"nodeType": "FunctionCall",
-																"src": "931:124:0",
+																"src": "929:124:0",
 																"tryCall": false,
 																"typeDescriptions": {
 																	"typeIdentifier": "t_struct$_SpeciesInfo_$24_memory_ptr",
@@ -2963,7 +2963,7 @@
 															"functionReturnParameters": 32,
 															"id": 44,
 															"nodeType": "Return",
-															"src": "924:131:0"
+															"src": "922:131:0"
 														}
 													]
 												}
@@ -2980,7 +2980,7 @@
 															"kind": "string",
 															"lValueRequested": false,
 															"nodeType": "Literal",
-															"src": "2316:17:0",
+															"src": "2314:17:0",
 															"typeDescriptions": {
 																"typeIdentifier": "t_stringliteral_996dd1f653123555a76967eb618cbe18b14decf92259a2073fea54b543a563b8",
 																"typeString": "literal_string \"Unknown species\""
@@ -3003,7 +3003,7 @@
 															4294967277
 														],
 														"referencedDeclaration": 4294967277,
-														"src": "2309:6:0",
+														"src": "2307:6:0",
 														"typeDescriptions": {
 															"typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
 															"typeString": "function (string memory) pure"
@@ -3018,7 +3018,7 @@
 													"nameLocations": [],
 													"names": [],
 													"nodeType": "FunctionCall",
-													"src": "2309:25:0",
+													"src": "2307:25:0",
 													"tryCall": false,
 													"typeDescriptions": {
 														"typeIdentifier": "t_tuple$__$",
@@ -3027,7 +3027,7 @@
 												},
 												"id": 190,
 												"nodeType": "ExpressionStatement",
-												"src": "2309:25:0"
+												"src": "2307:25:0"
 											}
 										]
 									},
@@ -3036,7 +3036,7 @@
 									"kind": "function",
 									"modifiers": [],
 									"name": "getSpeciesInfo",
-									"nameLocation": "790:14:0",
+									"nameLocation": "788:14:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
 										"id": 28,
@@ -3047,10 +3047,10 @@
 												"id": 27,
 												"mutability": "mutable",
 												"name": "species",
-												"nameLocation": "813:7:0",
+												"nameLocation": "811:7:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 192,
-												"src": "805:15:0",
+												"src": "803:15:0",
 												"stateVariable": false,
 												"storageLocation": "default",
 												"typeDescriptions": {
@@ -3064,14 +3064,14 @@
 														"id": 25,
 														"name": "Species",
 														"nameLocations": [
-															"805:7:0"
+															"803:7:0"
 														],
 														"nodeType": "IdentifierPath",
 														"referencedDeclaration": 13,
-														"src": "805:7:0"
+														"src": "803:7:0"
 													},
 													"referencedDeclaration": 13,
-													"src": "805:7:0",
+													"src": "803:7:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_enum$_Species_$13",
 														"typeString": "enum SpeciesLibrary.Species"
@@ -3080,7 +3080,7 @@
 												"visibility": "internal"
 											}
 										],
-										"src": "804:17:0"
+										"src": "802:17:0"
 									},
 									"returnParameters": {
 										"id": 32,
@@ -3094,7 +3094,7 @@
 												"nameLocation": "-1:-1:-1",
 												"nodeType": "VariableDeclaration",
 												"scope": 192,
-												"src": "845:18:0",
+												"src": "843:18:0",
 												"stateVariable": false,
 												"storageLocation": "memory",
 												"typeDescriptions": {
@@ -3108,14 +3108,14 @@
 														"id": 29,
 														"name": "SpeciesInfo",
 														"nameLocations": [
-															"845:11:0"
+															"843:11:0"
 														],
 														"nodeType": "IdentifierPath",
 														"referencedDeclaration": 24,
-														"src": "845:11:0"
+														"src": "843:11:0"
 													},
 													"referencedDeclaration": 24,
-													"src": "845:11:0",
+													"src": "843:11:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_struct$_SpeciesInfo_$24_storage_ptr",
 														"typeString": "struct SpeciesLibrary.SpeciesInfo"
@@ -3124,22 +3124,22 @@
 												"visibility": "internal"
 											}
 										],
-										"src": "844:20:0"
+										"src": "842:20:0"
 									},
 									"scope": 193,
-									"src": "781:1561:0",
+									"src": "779:1561:0",
 									"stateMutability": "pure",
 									"virtual": false,
 									"visibility": "internal"
 								}
 							],
 							"scope": 194,
-							"src": "61:2286:0",
+							"src": "61:2284:0",
 							"usedErrors": [],
 							"usedEvents": []
 						}
 					],
-					"src": "33:2314:0"
+					"src": "33:2312:0"
 				},
 				"id": 0
 			}
