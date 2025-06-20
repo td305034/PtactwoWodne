@@ -6,7 +6,6 @@ import "./SpeciesLibrary.sol";
 
 contract Park {
     Ptak public ptakContract;
-    mapping(uint256 => bool) public insured;
     mapping(SpeciesLibrary.Species => uint256) public speciesPrices;
 
     constructor(address _ptakAddress) {

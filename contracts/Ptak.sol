@@ -17,6 +17,7 @@ contract Ptak {
     mapping(uint256 => BirdData) public birds;
     uint256 public nextId;
     address public parkContract;
+    mapping(uint256 => bool) public insured;
 
     modifier onlyPark() {
         require(msg.sender == parkContract, "Only Park can call this");
@@ -27,9 +28,9 @@ contract Ptak {
         parkContract = _parkContract;
     }
 
-    function mintBird(SpeciesLibrary.Species species, string memory imageUrl) external onlyPark returns (int) {
+    function mintBird(SpeciesLibrary.Species species) external onlyPark returns (int) {
         SpeciesLibrary.SpeciesInfo memory info = SpeciesLibrary.getSpeciesInfo(species);
-        birds[nextId] = BirdData(0, 0, info.maxHealth, species);
+        birds[nextId] = BirdData(0, 0, info.maxHealth, species, block.timestamp);
         nextId++;
         return 0; // success
     }
@@ -58,7 +59,10 @@ contract Ptak {
     }
 
     function randomPoisoning(uint256 birdId) private {
-        Ptak.BirdData memory bird = ptakContract.getBird(birdId);
+        SpeciesLibrary.SpeciesInfo memory info;
+        Ptak.BirdData storage bird = birds[birdId];
+        info = SpeciesLibrary.getSpeciesInfo(bird.species);
+
         if(!insured[birdId]){
             uint256 chance = SpeciesLibrary.getSpeciesInfo(bird.species).poisoningChance;
             uint256 rand = uint256(keccak256(abi.encodePacked(block.timestamp, birdId))) % 100;
@@ -70,9 +74,9 @@ contract Ptak {
     }
 
     function feedBird(uint256 id, uint256 foodAmount) external onlyPark {
-        updateHungerAndAge(id); // najpierw update
+        updateHungerAndAge(id);
         BirdData storage bird = birds[id];
-        randomFoodPoisoning(id);
+        randomPoisoning(id);
         if(bird.hunger >= foodAmount){
             bird.hunger -= foodAmount;
         } else {
@@ -80,7 +84,7 @@ contract Ptak {
         }
     }
 
-    function getBird(uint256 id) external view returns (BirdData memory) {
+    function getBird(uint256 id) external returns (BirdData memory) {
         updateHungerAndAge(id);
         return birds[id];
     }
