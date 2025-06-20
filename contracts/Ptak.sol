@@ -84,6 +84,11 @@ contract Ptak {
         }
     }
 
+    function insure(uint256 birdId) external {
+        require(msg.sender == parkContract, "Only Park can insure");
+        insured[birdId] = true;
+    }
+
     function getBird(uint256 id) external returns (BirdData memory) {
         updateHungerAndAge(id);
         return birds[id];

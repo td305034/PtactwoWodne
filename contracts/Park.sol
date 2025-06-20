@@ -22,11 +22,6 @@ contract Park {
         speciesPrices[SpeciesLibrary.Species.Moorhen] = 0.01 ether;
     }
 
-
-    function ageBird(uint256 birdId) external {
-        Ptak.BirdData memory bird = ptakContract.getBird(birdId);
-    }
-
     function healBird(uint256 birdId) external payable {
         require(msg.value >= 0.005 ether, "Healing costs 0.005 ETH");
         Ptak.BirdData memory bird = ptakContract.getBird(birdId);
@@ -35,23 +30,23 @@ contract Park {
 
     function buyInsurance(uint256 birdId) external payable {
         require(msg.value >= 0.02 ether, "Insurance costs 0.02 ETH");
-        insured[birdId] = true;
+        ptakContract.insure(birdId);
     }
 
     function mintRegularBird(SpeciesLibrary.Species species) external payable {
         uint256 price = speciesPrices[species];
-        require(msg.value >= price, "Not enough ETH to mint " + species);
+        require(msg.value >= price, "Not enough ETH to mint this species");
 
         uint256 rand = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender))) % 1000;
         if(rand < 10) { // 1% szans
             ptakContract.mintBird(SpeciesLibrary.Species.Mythical);
         }
         else{
-            ptakContract.mintBird(species, imageUrl);
+            ptakContract.mintBird(species);
         }
     }
 
-    function mintLegendaryBird(string memory imageUrl) external returns (int) {
+    function mintLegendaryBird() external payable {
         uint256 price = 0.2 ether;
         require(msg.value >= price, "Not enough ETH to mint mythical bird");
             ptakContract.mintBird(SpeciesLibrary.Species.Mythical);

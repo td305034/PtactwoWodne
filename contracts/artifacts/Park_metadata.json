@@ -24,19 +24,6 @@
 						"type": "uint256"
 					}
 				],
-				"name": "ageBird",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "birdId",
-						"type": "uint256"
-					}
-				],
 				"name": "buyInsurance",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -56,41 +43,23 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "insured",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
+				"inputs": [],
+				"name": "mintLegendaryBird",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "imageUrl",
-						"type": "string"
+						"internalType": "enum SpeciesLibrary.Species",
+						"name": "species",
+						"type": "uint8"
 					}
 				],
-				"name": "mintLegendaryBird",
-				"outputs": [
-					{
-						"internalType": "int256",
-						"name": "",
-						"type": "int256"
-					}
-				],
-				"stateMutability": "nonpayable",
+				"name": "mintRegularBird",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -109,14 +78,20 @@
 			{
 				"inputs": [
 					{
+						"internalType": "enum SpeciesLibrary.Species",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"name": "speciesPrices",
+				"outputs": [
+					{
 						"internalType": "uint256",
-						"name": "birdId",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "randomPoisoning",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -148,25 +123,27 @@
 	},
 	"sources": {
 		"contracts/Park.sol": {
-			"keccak256": "0x538beb44987dbd5ecee9e8c9618bb40a8cd942ec3ef07c688661213e2864eb10",
+			"keccak256": "0x670451ce74e55ac7509850e520a028737c44bc92296819806711017e445b0c33",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://2039b256d3f4dedb87986aa61654e044c5269ca9416b9d0ecf7224a68615664a",
-				"dweb:/ipfs/QmeGdCkTzAZLGcxmYRysmXZHKuyoBov47KR8i4sKedx88W"
+				"bzz-raw://c5033154aa73453ac71cbda71345202bc077e92439005fad48730784ef3108bb",
+				"dweb:/ipfs/QmRNKtDBub6B9Ve2A8RVycKGY5rrm2PhmCXo3VKPVmccfR"
 			]
 		},
 		"contracts/Ptak.sol": {
-			"keccak256": "0xebc26ed7f4c3f41beacd641e86bb993a17cb5de59d5841df302cefe07480852a",
+			"keccak256": "0x922e1988172031d76421892c153cbea62ddd3f3351d1e4136b6dff6605c9f84f",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://a126e1859dac6ac5c339efc5fc41293e29af4841cc22d82e43bf525d79fa3088",
-				"dweb:/ipfs/QmRRfCJbefpm4ujKHoFiMm3ECfEM43VFbi5qZqzaVaB48F"
+				"bzz-raw://33ddeb563448949130fd0e6e4e40625353e23dd70445dc01c3bcb01bc3c7caec",
+				"dweb:/ipfs/QmfQgkZzh3XGvXzVDmy38SFNxzLKiLy9Wi9SBYsgMkKj63"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {
-			"keccak256": "0x11d25478c3836a3fb614967c0fbe4b9dc51d9ed8cde672934363bfe06e103d58",
+			"keccak256": "0x3ce3984897877990a314be62d7704642fc8d4e4940889fa9f80953d244e0c4e2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://78ae91461bb8964344a21e7d1d5e53fb6eae279cbb3732897fbc98e8d7ccb71f",
-				"dweb:/ipfs/QmR2LqbNhYRNaW8LCGymhDg4zz2KtKUB33AYyxnDK82W4A"
+				"bzz-raw://e2664a396cdaf155f01b5e4e9a74fcd8fb5d224b168956cefe4d5fd772e8b798",
+				"dweb:/ipfs/QmeGyj9sSnMECxxsvNQ3BN7se3oKRxARJVUxYrkKXL866h"
 			]
 		}
 	},

@@ -123,6 +123,19 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "insure",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -225,11 +238,11 @@
 	},
 	"sources": {
 		"contracts/Ptak.sol": {
-			"keccak256": "0x9e9e642a0be75ee1de8cda74632bcdcca8be47a2af3cd1f3ffb583cac8158401",
+			"keccak256": "0x922e1988172031d76421892c153cbea62ddd3f3351d1e4136b6dff6605c9f84f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://36840d120293144f92a427d2d471f7c7af1d0d4f97c8829360e55d8944d4f178",
-				"dweb:/ipfs/QmNkSjfew9yot79mjmqW6CS7JyjobDzJon4fbfqSdoaMYg"
+				"bzz-raw://33ddeb563448949130fd0e6e4e40625353e23dd70445dc01c3bcb01bc3c7caec",
+				"dweb:/ipfs/QmfQgkZzh3XGvXzVDmy38SFNxzLKiLy9Wi9SBYsgMkKj63"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {
