@@ -18,6 +18,8 @@ contract Ptak {
     uint256 public nextId;
     address public parkContract;
     mapping(uint256 => bool) public insured;
+    mapping(uint256 => address) public ownerOf;
+
 
     modifier onlyPark() {
         require(msg.sender == parkContract, "Only Park can call this");
@@ -31,6 +33,7 @@ contract Ptak {
     function mintBird(SpeciesLibrary.Species species) external onlyPark returns (int) {
         SpeciesLibrary.SpeciesInfo memory info = SpeciesLibrary.getSpeciesInfo(species);
         birds[nextId] = BirdData(0, 0, info.maxHealth, species, block.timestamp);
+        ownerOf[nextId] = msg.sender;
         nextId++;
         return 0;
     }
@@ -98,4 +101,9 @@ contract Ptak {
         parkContract = _parkContract;
     }
 
+    function transferBird(uint256 birdId, address newOwner) external {
+        require(ownerOf[birdId] == msg.sender, "Not the owner");
+        require(newOwner != address(0), "Invalid address");
+        ownerOf[birdId] = newOwner;
+    }
 }

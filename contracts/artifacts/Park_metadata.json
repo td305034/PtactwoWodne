@@ -131,11 +131,11 @@
 			]
 		},
 		"contracts/Ptak.sol": {
-			"keccak256": "0x8e95e6e08abc284ff3aaf5d29bf4f34ba8e8835661e0a03c71a4c031282a7f9a",
+			"keccak256": "0x410d032c211d91e8ae6eee5fe3645e9ae93bb6edf6b9fe8c2f8cdc8c5b7c3c82",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0c3ba48959ab5769ae87dfd73f920bbde8f5fae2baa8b9ee1c1d33cbb942d5e0",
-				"dweb:/ipfs/QmaWCSKdFhKuRrLczTG21wUsDe6Q6cnLc8mv6af6Rs4n2i"
+				"bzz-raw://3b1842da41194fa82b9369776d8f596230fd967cac5e573f9b7b1df1bc5952c0",
+				"dweb:/ipfs/QmQV8asDpTR12EAKyQhqdbEzgHRU9SsoiJY7ZkMQPGTB9p"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {

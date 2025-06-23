@@ -184,6 +184,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "parkContract",
 				"outputs": [
@@ -205,6 +224,24 @@
 					}
 				],
 				"name": "setParkContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferBird",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -251,11 +288,11 @@
 	},
 	"sources": {
 		"contracts/Ptak.sol": {
-			"keccak256": "0x03261fcc4b4d692d17f21e50650d9b0f1b1a6c5ad1e60f79c44e51c92e34f36f",
+			"keccak256": "0x410d032c211d91e8ae6eee5fe3645e9ae93bb6edf6b9fe8c2f8cdc8c5b7c3c82",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://71a3a4ff00457ff245bbfc8c45829bae0a544b3cb766ccfd568ddf86fc9b7fe2",
-				"dweb:/ipfs/QmNvS7XyPy26DtSgKAd49vUAmrebTvTB5MSD45v3B16JiG"
+				"bzz-raw://3b1842da41194fa82b9369776d8f596230fd967cac5e573f9b7b1df1bc5952c0",
+				"dweb:/ipfs/QmQV8asDpTR12EAKyQhqdbEzgHRU9SsoiJY7ZkMQPGTB9p"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {
