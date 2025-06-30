@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/SpeciesLibrary.sol": {
-			"keccak256": "0xad204a25d132c6145d22f061e8f50fe9797de3bbf2f4bf4006c663836e085f97",
+			"keccak256": "0xf3dd1da5f1e621905a5a595431558fd698c86b487274418c47756ca19a71d3ee",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fb29e4917d95ef2cd54941135d937ba38ba9337a724da625bd22416fdf6b020d",
-				"dweb:/ipfs/QmUnyHRgai2XWcfeotDkFVpe3L6s9vKSQNAE3e1y4SWfa6"
+				"bzz-raw://df28dcbefbc3c4dfd655478f5d0afde22eaadce827f798b161e4b87b329e342e",
+				"dweb:/ipfs/QmeQGkL7EJQcwhhgTeEyd2Ts9EKMmMVZyu7gDpz7vNikao"
 			]
 		}
 	},

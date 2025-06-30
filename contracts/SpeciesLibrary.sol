@@ -48,21 +48,21 @@ library SpeciesLibrary {
         } else if (species == Species.MallardDuck) {
             return SpeciesInfo(80, 80, 3, 6, "https://gateway.pinata.cloud/ipfs/bafybeiev7pucz7yh7x6haidmphp5ieobvcfdclnlwjqa2ivs4y357pvwma");
         } else if (species == Species.Mythical) {
-            return SpeciesInfo(300, 300, 1, 0, "");
+            return SpeciesInfo(300, 300, 1, 0, "https://gateway.pinata.cloud/ipfs/bafybeietbf5qosrybqgkq2cd4czv66dww6st4wj5xloze4enb2d5xyj6pm");
         } else if (species == Species.GreyHeron) {
-            return SpeciesInfo(180, 90, 2, 4, "");
+            return SpeciesInfo(180, 90, 2, 4, "https://gateway.pinata.cloud/ipfs/bafybeifxnqrpp3afajntrnwyynu2lcrzvmdmsthwab6x2wn23wcnbdjn6m");
         } else if (species == Species.RedNeckedGrebe) {
-            return SpeciesInfo(80, 70, 2, 8, "");
+            return SpeciesInfo(80, 70, 2, 8, "https://gateway.pinata.cloud/ipfs/bafybeibcdpzpyg6mqae2ogowuumymqmqxb2usniu75geej4ptr467ot2nm");
         } else if (species == Species.WaterRail) {
-            return SpeciesInfo(50, 60, 4, 5, "");
+            return SpeciesInfo(50, 60, 4, 5, "https://gateway.pinata.cloud/ipfs/bafkreida4apspxtnpb63oqyzv3tin5owc45lgctkdqv74hjas4fytookta");
         } else if (species == Species.CommonTern) {
-            return SpeciesInfo(55, 40, 3, 4, "");
+            return SpeciesInfo(55, 40, 3, 4, "https://gateway.pinata.cloud/ipfs/bafkreih2fmxu3ayscr7xez2u2ashawifc3oj4qa26j56ch46vez7zyaej4");
         } else if (species == Species.Goosander) {
-            return SpeciesInfo(78, 65, 2, 4, "");
+            return SpeciesInfo(78, 65, 2, 4, "https://gateway.pinata.cloud/ipfs/bafkreid3mdymzsjtudm56zrovitxouvgsjbzzkyarsq7t2i2biwyg6rhtq");
         } else if (species == Species.GreylagGoose) {
-            return SpeciesInfo(150, 100, 4, 3, "");
+            return SpeciesInfo(150, 100, 4, 3, "https://gateway.pinata.cloud/ipfs/bafkreif6eno2qjj3xc7mebql2s66ol6yxrwx7gwavz44qn2dlz3cnw7f24");
         } else if (species == Species.Moorhen) {
-            return SpeciesInfo(35, 66, 4, 5, "");
+            return SpeciesInfo(35, 66, 4, 5, "https://gateway.pinata.cloud/ipfs/bafybeifpajbivhhemjefgiamnvh7oe27lextqj7agpznchqeujcn46i5ca");
         }
         revert("Unknown species");
     }

@@ -72,6 +72,10 @@ contract Ptak {
         }
     }
 
+    function getBirdImage(uint256 birdId) external view returns (string memory) {
+        BirdData storage bird = birds[birdId];
+        return SpeciesLibrary.getSpeciesInfo(bird.species).imageUrl;
+    }
 
     function healBird(uint256 birdId) external onlyPark {
         BirdData storage bird = birds[birdId];
