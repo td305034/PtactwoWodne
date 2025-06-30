@@ -147,6 +147,25 @@
 						"type": "uint256"
 					}
 				],
+				"name": "getBirdImage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
 				"name": "healBird",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -334,19 +353,19 @@
 	},
 	"sources": {
 		"contracts/Ptak.sol": {
-			"keccak256": "0x4a0afa632e4ea392dd7b672517fe60dd8a9a8d8e4dbff642c888e1adfe762dda",
+			"keccak256": "0xc6aa8fbc14e4af21983cdfb2c194d646d328d56710bfb147620bf45906a2b51e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://69e817849a6b6415082517615281ac51d292d61b44608b8046aabcb289752dff",
-				"dweb:/ipfs/QmUkCAFjFMpesj5g67YRVZcekR8ivrGFuNXXq6ZiHBR29g"
+				"bzz-raw://f33ec715a52116389600e8e19b4ad7d7cb911bb7ebe10f5f28069de05ec64787",
+				"dweb:/ipfs/QmerJ3XpJ9CDkeWAyz3rJrXLygFyZ256QjkbXviGiXYj1H"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {
-			"keccak256": "0x44438b954815be64bce8a52115e096d7a716550c6499a30ee7e437483b5e1b86",
+			"keccak256": "0xf3dd1da5f1e621905a5a595431558fd698c86b487274418c47756ca19a71d3ee",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3cadebe267095d3f75c224d39fff218240b8671337af6179e63bd887a6401240",
-				"dweb:/ipfs/QmbvEPHxGbohz7gCqRGYKDpRs3RvBQUbTUZB9xqxnb1WN2"
+				"bzz-raw://df28dcbefbc3c4dfd655478f5d0afde22eaadce827f798b161e4b87b329e342e",
+				"dweb:/ipfs/QmeQGkL7EJQcwhhgTeEyd2Ts9EKMmMVZyu7gDpz7vNikao"
 			]
 		}
 	},
