@@ -12,6 +12,8 @@ contract Ptak {
         uint256 health;
         SpeciesLibrary.Species species;
         uint256 lastUpdateTime;
+        bool isDead;
+        uint256 deathTimestamp;
     }
 
     mapping(uint256 => BirdData) public birds;
@@ -32,7 +34,7 @@ contract Ptak {
 
     function mintBird(SpeciesLibrary.Species species) external onlyPark returns (int) {
         SpeciesLibrary.SpeciesInfo memory info = SpeciesLibrary.getSpeciesInfo(species);
-        birds[nextId] = BirdData(0, 0, info.maxHealth, species, block.timestamp);
+        birds[nextId] = BirdData(0, 0, info.maxHealth, species, block.timestamp, false, 0);
         ownerOf[nextId] = msg.sender;
         nextId++;
         return 0;
@@ -40,24 +42,42 @@ contract Ptak {
 
     function updateHungerAndAge(uint256 id) public {
         BirdData storage bird = birds[id];
-        uint256 timeElapsed = block.timestamp - bird.lastUpdateTime; // in seconds
-        if(timeElapsed > 0) {
-            uint256 hungerIncrease = (timeElapsed * SpeciesLibrary.getSpeciesInfo(bird.species).hungerDecayRate) / 3600;
+        if (bird.isDead) return;
+
+        uint256 timeElapsed = block.timestamp - bird.lastUpdateTime;
+        if (timeElapsed > 0) {
+            SpeciesLibrary.SpeciesInfo memory info = SpeciesLibrary.getSpeciesInfo(bird.species);
+
+            uint256 hungerIncrease = (timeElapsed * info.hungerDecayRate) / 3600;
             bird.hunger += hungerIncrease;
 
-            uint256 maxHunger = SpeciesLibrary.getSpeciesInfo(bird.species).maxHunger;
-            if(bird.hunger > maxHunger) {
-                bird.hunger = maxHunger;
+            if (bird.hunger > info.maxHunger) {
+                uint256 overflow = bird.hunger - info.maxHunger;
+                bird.hunger = info.maxHunger;
+                if (bird.health <= overflow) {
+                    bird.health = 0;
+                    bird.isDead = true;
+                    bird.deathTimestamp = block.timestamp;
+                } else {
+                    bird.health -= overflow;
+                }
             }
 
-            // starzenie
             uint256 daysPassed = timeElapsed / 86400;
-            if(daysPassed > 0) {
+            if (daysPassed > 0) {
                 bird.age += daysPassed;
             }
 
-            bird.lastUpdateTime = block.timestamp; // aktualizujemy do bieżącego czasu
+            bird.lastUpdateTime = block.timestamp;
         }
+    }
+
+
+    function healBird(uint256 birdId) external onlyPark {
+        BirdData storage bird = birds[birdId];
+        require(!bird.isDead, "Cannot heal a dead bird; revive it first");
+
+        bird.health = SpeciesLibrary.getSpeciesInfo(bird.species).maxHealth;
     }
 
     function randomPoisoning(uint256 birdId) private {
@@ -79,6 +99,9 @@ contract Ptak {
         updateHungerAndAge(id);
         BirdData storage bird = birds[id];
         randomPoisoning(id);
+
+        require(!bird.isDead, "Cannot feed a dead bird");
+
         if(bird.hunger >= foodAmount){
             bird.hunger -= foodAmount;
         } else {
@@ -86,8 +109,17 @@ contract Ptak {
         }
     }
 
-    function insure(uint256 birdId) external {
-        require(msg.sender == parkContract, "Only Park can insure");
+    function revive(uint256 birdId) external onlyPark {
+        BirdData storage bird = birds[birdId];
+        require(bird.isDead, "Not dead");
+        bird.health = SpeciesLibrary.getSpeciesInfo(bird.species).maxHealth;
+        bird.hunger = 0;
+        bird.isDead = false;
+        bird.deathTimestamp = 0;
+        bird.lastUpdateTime = block.timestamp;
+    }
+
+    function insure(uint256 birdId) external onlyPark {
         insured[birdId] = true;
     }
 
@@ -101,8 +133,8 @@ contract Ptak {
         parkContract = _parkContract;
     }
 
-    function transferBird(uint256 birdId, address newOwner) external {
-        require(ownerOf[birdId] == msg.sender, "Not the owner");
+    function transferBird(uint256 birdId, address newOwner) external onlyPark {
+        require(ownerOf[birdId] == tx.origin, "Not the owner");
         require(newOwner != address(0), "Invalid address");
         ownerOf[birdId] = newOwner;
     }

@@ -18,11 +18,26 @@ library SpeciesLibrary {
 
 
     struct SpeciesInfo {
-        uint256 maxHealth;       // the longer the ptak actually lives, the more health it gets here
-        uint256 maxHunger;       // when hunger reaches maxHunger, the Ptak dies. When it gets below 0, it gets poisoned.
-        uint256 hungerDecayRate; // this value is added to hunger every hour
-        uint256 poisoningChance; // percentage (0-100)
+        uint256 maxHealth;
+        uint256 maxHunger;
+        uint256 hungerDecayRate;
+        uint256 poisoningChance;
         string imageUrl;
+    }
+
+    function getSpeciesPrice(Species species) internal pure returns (uint256) {
+        if (species == Species.MuteSwan) return 0.05 ether;
+        if (species == Species.WhiteStork) return 0.05 ether;
+        if (species == Species.MallardDuck) return 0.02 ether;
+        if (species == Species.GreyHeron) return 0.03 ether;
+        if (species == Species.RedNeckedGrebe) return 0.018 ether;
+        if (species == Species.WaterRail) return 0.01 ether;
+        if (species == Species.CommonTern) return 0.01 ether;
+        if (species == Species.Goosander) return 0.012 ether;
+        if (species == Species.GreylagGoose) return 0.04 ether;
+        if (species == Species.Moorhen) return 0.01 ether;
+        if (species == Species.Mythical) return 0.2 ether;
+        revert("Unknown species");
     }
 
     function getSpeciesInfo(Species species) internal pure returns (SpeciesInfo memory) {

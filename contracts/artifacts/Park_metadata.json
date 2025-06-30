@@ -35,6 +35,24 @@
 						"internalType": "uint256",
 						"name": "birdId",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "feedBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
 					}
 				],
 				"name": "healBird",
@@ -64,6 +82,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "ptakContract",
 				"outputs": [
 					{
@@ -78,20 +109,21 @@
 			{
 				"inputs": [
 					{
-						"internalType": "enum SpeciesLibrary.Species",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"name": "speciesPrices",
-				"outputs": [
-					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "birdId",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "reviveBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -123,27 +155,27 @@
 	},
 	"sources": {
 		"contracts/Park.sol": {
-			"keccak256": "0x670451ce74e55ac7509850e520a028737c44bc92296819806711017e445b0c33",
+			"keccak256": "0xafcb9e31cce6ec0543c3f26dcc3fc5de9bf5143a2de70a314ad164d40d7bd1b6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c5033154aa73453ac71cbda71345202bc077e92439005fad48730784ef3108bb",
-				"dweb:/ipfs/QmRNKtDBub6B9Ve2A8RVycKGY5rrm2PhmCXo3VKPVmccfR"
+				"bzz-raw://16e8b31deb9c7fbfc4531a60f4e4a590dfbc4a731d1e3b2ee261b880aef957bf",
+				"dweb:/ipfs/QmbnbJmrqUMJLEQkY4aeUZhFFEY4QyP73QvLyTnc2bse4e"
 			]
 		},
 		"contracts/Ptak.sol": {
-			"keccak256": "0x410d032c211d91e8ae6eee5fe3645e9ae93bb6edf6b9fe8c2f8cdc8c5b7c3c82",
+			"keccak256": "0x4a0afa632e4ea392dd7b672517fe60dd8a9a8d8e4dbff642c888e1adfe762dda",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3b1842da41194fa82b9369776d8f596230fd967cac5e573f9b7b1df1bc5952c0",
-				"dweb:/ipfs/QmQV8asDpTR12EAKyQhqdbEzgHRU9SsoiJY7ZkMQPGTB9p"
+				"bzz-raw://69e817849a6b6415082517615281ac51d292d61b44608b8046aabcb289752dff",
+				"dweb:/ipfs/QmUkCAFjFMpesj5g67YRVZcekR8ivrGFuNXXq6ZiHBR29g"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {
-			"keccak256": "0xad204a25d132c6145d22f061e8f50fe9797de3bbf2f4bf4006c663836e085f97",
+			"keccak256": "0x37a8b0dec29f4858b8c723962240e9a3131df67413d5b5f1e9bf550c1e94ebef",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fb29e4917d95ef2cd54941135d937ba38ba9337a724da625bd22416fdf6b020d",
-				"dweb:/ipfs/QmUnyHRgai2XWcfeotDkFVpe3L6s9vKSQNAE3e1y4SWfa6"
+				"bzz-raw://1fac2ca7f9d920561464d8f85448e606c058d9c2805f3f6e6250a5d7e1131043",
+				"dweb:/ipfs/QmbNZfSSeBQcFaS3HGUAviyZioSFAoYPoSPmN9zbWfiE45"
 			]
 		}
 	},
