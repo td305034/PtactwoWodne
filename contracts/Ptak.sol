@@ -32,12 +32,13 @@ contract Ptak {
         parkContract = _parkContract;
     }
 
-    function mintBird(SpeciesLibrary.Species species) external onlyPark returns (int) {
+    function mintBird(SpeciesLibrary.Species species) external onlyPark returns (uint) {
         SpeciesLibrary.SpeciesInfo memory info = SpeciesLibrary.getSpeciesInfo(species);
         birds[nextId] = BirdData(0, 0, info.maxHealth, species, block.timestamp, false, 0);
-        ownerOf[nextId] = msg.sender;
+        ownerOf[nextId] = tx.origin;
+        uint256 mintedId = nextId;
         nextId++;
-        return 0;
+        return mintedId;
     }
 
     function updateHungerAndAge(uint256 id) public {

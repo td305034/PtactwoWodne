@@ -17,6 +17,31 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum SpeciesLibrary.Species",
+						"name": "species",
+						"type": "uint8"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "BirdMinted",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -120,6 +145,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferBird",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "withdraw",
 				"outputs": [],
@@ -155,19 +198,19 @@
 	},
 	"sources": {
 		"contracts/Park.sol": {
-			"keccak256": "0xafcb9e31cce6ec0543c3f26dcc3fc5de9bf5143a2de70a314ad164d40d7bd1b6",
+			"keccak256": "0xb6104fffcec6469036cb6a9e350a47b3243d17400e46f47e1f21a6e9ce8b72e8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://16e8b31deb9c7fbfc4531a60f4e4a590dfbc4a731d1e3b2ee261b880aef957bf",
-				"dweb:/ipfs/QmbnbJmrqUMJLEQkY4aeUZhFFEY4QyP73QvLyTnc2bse4e"
+				"bzz-raw://3c8f1189ac17deec7e343ff3933497ba442ed4d61233b8400086b7f39d4d96b2",
+				"dweb:/ipfs/QmVTveNw1uiRWAGFQa7nY72Cs9CiEKFgBL9LyuNej6xTqE"
 			]
 		},
 		"contracts/Ptak.sol": {
-			"keccak256": "0xc6aa8fbc14e4af21983cdfb2c194d646d328d56710bfb147620bf45906a2b51e",
+			"keccak256": "0x3b4328b8e2a5cde45e99ca471376704bc292d0f914d5156ab5fd5a1b024ab1cc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f33ec715a52116389600e8e19b4ad7d7cb911bb7ebe10f5f28069de05ec64787",
-				"dweb:/ipfs/QmerJ3XpJ9CDkeWAyz3rJrXLygFyZ256QjkbXviGiXYj1H"
+				"bzz-raw://ae1b8d599629e24ea8f77909063727e8ab7223fa7c1d9f80300b8a7f093d35c3",
+				"dweb:/ipfs/QmdUJBBJBUtay82Gsaitx6HfJnEL3KzMkaTMnccsH643KK"
 			]
 		},
 		"contracts/SpeciesLibrary.sol": {

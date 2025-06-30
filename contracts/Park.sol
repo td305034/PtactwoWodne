@@ -53,19 +53,30 @@ contract Park {
         ptakContract.feedBird(birdId, amount);
     }
 
+    function transferBird(uint256 birdId, address newOwner) external {
+        ptakContract.transferBird(birdId, newOwner);
+    }
 
+    event BirdMinted(uint256 indexed birdId, SpeciesLibrary.Species species, address indexed owner);
 
     function mintRegularBird(SpeciesLibrary.Species species) external payable {
         uint256 price = SpeciesLibrary.getSpeciesPrice(species);
         require(msg.value >= price, "Not enough ETH to mint this species");
 
+        uint256 birdId;
+        SpeciesLibrary.Species mintedSpecies;
+
         uint256 rand = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender))) % 1000;
         if(rand < 10) { // 1% szans
-            ptakContract.mintBird(SpeciesLibrary.Species.Mythical);
+            birdId = ptakContract.mintBird(SpeciesLibrary.Species.Mythical);
+            mintedSpecies = SpeciesLibrary.Species.Mythical;
         }
         else{
-            ptakContract.mintBird(species);
+            birdId = ptakContract.mintBird(species);
+            mintedSpecies = species;
         }
+
+        emit BirdMinted(birdId, mintedSpecies, tx.origin);
     }
 
     function mintLegendaryBird() external payable {
