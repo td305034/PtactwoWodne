@@ -7,6 +7,7 @@ contract Ptak {
     using SpeciesLibrary for SpeciesLibrary.Species;
 
     struct BirdData {
+        bool exists;
         uint256 age;
         uint256 hunger;
         uint256 health;
@@ -34,7 +35,7 @@ contract Ptak {
 
     function mintBird(SpeciesLibrary.Species species) external onlyPark returns (uint) {
         SpeciesLibrary.SpeciesInfo memory info = SpeciesLibrary.getSpeciesInfo(species);
-        birds[nextId] = BirdData(0, 0, info.maxHealth, species, block.timestamp, false, 0);
+        birds[nextId] = BirdData(true, 0, 0, info.maxHealth, species, block.timestamp, false, 0);
         ownerOf[nextId] = tx.origin;
         uint256 mintedId = nextId;
         nextId++;
@@ -80,6 +81,7 @@ contract Ptak {
 
     function healBird(uint256 birdId) external onlyPark {
         BirdData storage bird = birds[birdId];
+        require(bird.exists, "That bird doesn't exist");
         require(!bird.isDead, "Cannot heal a dead bird; revive it first");
 
         bird.health = SpeciesLibrary.getSpeciesInfo(bird.species).maxHealth;
@@ -105,6 +107,8 @@ contract Ptak {
         BirdData storage bird = birds[id];
         randomPoisoning(id);
 
+
+        require(bird.exists, "That bird doesn't exist");
         require(!bird.isDead, "Cannot feed a dead bird");
 
         if(bird.hunger >= foodAmount){
@@ -116,6 +120,7 @@ contract Ptak {
 
     function revive(uint256 birdId) external onlyPark {
         BirdData storage bird = birds[birdId];
+        require(bird.exists, "That bird doesn't exist");
         require(bird.isDead, "Not dead");
         bird.health = SpeciesLibrary.getSpeciesInfo(bird.species).maxHealth;
         bird.hunger = 0;
@@ -143,4 +148,42 @@ contract Ptak {
         require(newOwner != address(0), "Invalid address");
         ownerOf[birdId] = newOwner;
     }
+
+    // Zwraca łączną liczbę ptaków (żywych + martwych)
+function getTotalBirdCount() external view returns (uint256) {
+    return nextId;
+}
+
+function getAliveBirdCount() external view returns (uint256 count) {
+    for (uint256 i = 0; i < nextId; i++) {
+        if (birds[i].exists && !birds[i].isDead) {
+            count++;
+        }
+    }
+}
+
+function getDeadBirdCount() external view returns (uint256 count) {
+    for (uint256 i = 0; i < nextId; i++) {
+        if (birds[i].exists && birds[i].isDead) {
+            count++;
+        }
+    }
+}
+
+function getAliveBySpecies(SpeciesLibrary.Species species) external view returns (uint256 count) {
+    for (uint256 i = 0; i < nextId; i++) {
+        if (birds[i].exists && !birds[i].isDead && birds[i].species == species) {
+            count++;
+        }
+    }
+}
+
+function getDeadBySpecies(SpeciesLibrary.Species species) external view returns (uint256 count) {
+    for (uint256 i = 0; i < nextId; i++) {
+        if (birds[i].exists && birds[i].isDead && birds[i].species == species) {
+            count++;
+        }
+    }
+}
+
 }

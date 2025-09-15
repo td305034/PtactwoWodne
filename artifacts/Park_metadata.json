@@ -1,0 +1,226 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_ptakAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum SpeciesLibrary.Species",
+						"name": "species",
+						"type": "uint8"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "BirdMinted",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "buyInsurance",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "feedBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "healBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mintLegendaryBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum SpeciesLibrary.Species",
+						"name": "species",
+						"type": "uint8"
+					}
+				],
+				"name": "mintRegularBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ptakContract",
+				"outputs": [
+					{
+						"internalType": "contract Ptak",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					}
+				],
+				"name": "reviveBird",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "birdId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferBird",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Park.sol": "Park"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Park.sol": {
+			"keccak256": "0xb6104fffcec6469036cb6a9e350a47b3243d17400e46f47e1f21a6e9ce8b72e8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3c8f1189ac17deec7e343ff3933497ba442ed4d61233b8400086b7f39d4d96b2",
+				"dweb:/ipfs/QmVTveNw1uiRWAGFQa7nY72Cs9CiEKFgBL9LyuNej6xTqE"
+			]
+		},
+		"contracts/Ptak.sol": {
+			"keccak256": "0x30fc692c9bab34df127adf2c61c374ca00bc2f491e72473d6cfc6cedd1d3de46",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d992dd194c973aeaec13364f8593059813bf7c7c5d8c0de1cdc0c7262a2da9dd",
+				"dweb:/ipfs/QmXZ9bWjzapa3Y7ocr783jhyXpaUUZ4stSMbMRbXbYTo9t"
+			]
+		},
+		"contracts/SpeciesLibrary.sol": {
+			"keccak256": "0xf3dd1da5f1e621905a5a595431558fd698c86b487274418c47756ca19a71d3ee",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df28dcbefbc3c4dfd655478f5d0afde22eaadce827f798b161e4b87b329e342e",
+				"dweb:/ipfs/QmeQGkL7EJQcwhhgTeEyd2Ts9EKMmMVZyu7gDpz7vNikao"
+			]
+		}
+	},
+	"version": 1
+}
